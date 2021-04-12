@@ -1,2 +1,2 @@
 # Study_Project
-study_project
+toy_project
