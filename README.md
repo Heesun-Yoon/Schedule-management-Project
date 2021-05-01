@@ -1,4 +1,4 @@
-# Study_Project
-toy_project
+# Toy_Project
+
+Schedule management Web Project :exclamation:
 <br>
-Spring Web Project!
