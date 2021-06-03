@@ -2,6 +2,9 @@
 <!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "log4j.dtd">
 <log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
 
+
+	<!-- logger level : debug < info < warn < error < fatal -->
+
 	<!-- Appenders -->
 	<appender name="console" class="org.apache.log4j.ConsoleAppender">
 		<param name="Target" value="System.out" />
@@ -12,6 +15,7 @@
 	</appender>
 	
 	<!-- Application Loggers -->
+	<!-- com.project.common 밑으로 info level 이상의 log 기록들을 찍겠다라는 의미 -->
 	<logger name="com.project.common">
 		<level value="info" />
 	</logger>
@@ -36,6 +40,7 @@
 	<!-- Root Logger -->
 	<root>
 		<priority value="warn" />
+		<!-- appender-ref 로 설정한 걸로 사용하겠다는 의미 -->
 		<appender-ref ref="console" />
 	</root>
 	

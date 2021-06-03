@@ -24,7 +24,18 @@ public class HomeController {
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
+//		logger.info("Welcome home! The client locale is {}.", locale);
+		
+		//log4j test
+		String test1 = "test start";
+		String test2 = "log4j test";
+		String test3 = "testing..";
+		
+		//logger level : debug < info < warn < error < fatal
+		logger.debug("log4j 테스트중!");
+		logger.info(test1);
+		logger.warn(test2);
+		logger.error(test3);
 		
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
