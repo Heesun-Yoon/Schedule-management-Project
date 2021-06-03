@@ -21,8 +21,21 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="com.project.common" />
 	
+	<!-- Tiles ViewResolver -->
+	<beans:bean class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
+		<beans:property name="definitions" value="/WEB-INF/tiles.xml"></beans:property>
+	</beans:bean>
+	<beans:bean class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<beans:property name="viewClass" value="org.springframework.web.servlet.view.tiles2.TilesView"></beans:property>
+	</beans:bean>
+	
+	
+	
+	<!-- <context:component-scan base-package="com.project.common" /> -->
+	<context:component-scan base-package="com.project.*" />
+	
+
 	
 	
 </beans:beans>
