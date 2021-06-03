@@ -1,0 +1,221 @@
+/* main.css */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+a { text-decoration:none;}
+
+
+ul,li {
+    list-style: none;
+} 
+
+
+body{
+    background-color: #F0F0F6;
+    /* overflow-y: hidden; */
+    overflow-x: hidden;
+
+}
+
+/* nav */
+#nav {
+    float: left;
+    width: 350px;
+    height: 10000px;
+    background-color: #2E364A;
+}
+
+#nav .logo{
+    padding-top: 60px;
+    padding-bottom: 40px;
+    width: 300px;
+    margin:0 auto;
+}
+
+#nav .logo{
+    color:#bdbdc2;
+    font-weight: bold;
+}
+
+#nav .admin_info  {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: 300px;
+    margin:0 auto;
+}
+
+#nav .admin_info p {
+    color:#bdbdc2;
+    font-size: 14px;
+}
+
+/* mainmenu css */
+
+.menu > ul {
+    margin-left:25px;
+    margin-top:50px;
+}
+
+.menu ul > li{
+    margin-bottom:10px;
+    cursor: pointer;
+}
+.menu ul li div.mainmenu {
+    color:#bdbdc2;
+    font-size:16px;
+}
+
+.menu ul li div.mainmenu:hover {
+    color:white;
+}
+
+
+.menu ul li ul{
+    margin-left:20px;
+    margin-top:20px;
+    margin-bottom: 20px;
+}
+
+.menu ul li ul li a{
+    color:#bdbdc2;
+    font-size:14px;
+}
+
+.menu ul li ul li a:hover{
+    color:white;
+}
+
+
+/* 
+#wrap{
+    border: 1px solid blue;
+} */
+
+  /* container */
+#container {
+    float: left;
+    width: calc(100% - 350px);
+    margin: 0 auto;
+    /* height:100%; */
+    /* background-color: red; */
+}
+
+/* 헤더박스 */
+#container .top_box{
+    width: 100%;
+    height: 60px;
+    margin: 0 auto;
+    background-color: white;
+    border:1px solid #dbdbe2;
+    /* background-color: red; */
+}
+
+/* 헤더 박스 아이콘 이미지 */
+#container .top_box ul{
+    float: right;
+    margin-top:18px;
+    margin-right: 10px;
+}
+
+#container .top_box ul li {
+    float:left;
+    margin-right: 10px;
+}
+
+#container .top_box ul li img {
+    width: 25px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+
+/* 메인박스 */
+#container .box{
+    width: 1400px;
+    height: 800px;
+    margin: 37px auto;
+    background-color: white;
+    /* border:1px solid #dbdbe2; */
+    /* background-color: red; */
+}
+
+/* infobox */
+#container .box .infobox {
+    width: 305px;
+    height:130px;
+    border:1px solid red;
+    box-sizing: border-box;
+    float:left;
+    margin-left: 60px;
+    background-color: white;
+    border:1px solid #dbdbe2;
+}
+
+#container .box .infobox:first-child {
+    margin-left: 0px;
+}
+
+#container .box .infobox img{
+    width: 70px;
+    margin-left: 30px;
+    margin-top: 30px;
+    float: left;
+}
+#container .box .infobox .infotext{
+    font-size: 24px;
+    font-weight: bold;
+    float: left;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+#container .box .infobox .title{
+    font-weight: normal;
+    font-size: 15px;
+    color:#aaa;
+    margin-top: 0px;
+}
+
+/* chartbox */
+#container .box .chartbox {
+    margin-top:60px;
+    width: 1035px;
+    height:500px;
+    box-sizing: border-box;
+    background-color: white;
+    border:1px solid #dbdbe2;
+    float: left;
+}
+
+#container .box .chartbox h1{
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#chart1 {
+    width: 990px;
+    margin-left: 30px;
+}
+
+
+#container .box .chartbox2 {
+    width: 305px;
+    margin-left: 60px;
+}
+
+#container .box  #chart2 {
+    width: 250px;
+    height:380px;
+    margin-left:30px;
+}
+
+.highcharts-credits {
+    display: none;
+}
