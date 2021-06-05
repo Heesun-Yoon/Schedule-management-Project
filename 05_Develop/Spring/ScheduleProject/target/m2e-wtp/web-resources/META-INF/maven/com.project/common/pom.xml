@@ -136,33 +136,23 @@
 			<version>${org.springframework-version}</version>
 		</dependency>
 
-		
-		
-		<!-- AOP -->
-<!-- 		<dependency>
-			<groupId>aopalliance</groupId>
-			<artifactId>aopalliance</artifactId>
-			<version>1.0</version>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.aspectj</groupId>
-			<artifactId>aspectjweaver</artifactId>
-			<version>1.9.4</version>
-		</dependency>
-		
-		<dependency>
-			<groupId>cglib</groupId>
-			<artifactId>cglib</artifactId>
-			<version>3.2.12</version>
-		</dependency> -->
-		
-		
 
 
-			
+
+		<!-- Spring File Upload -->
+		 <dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.0.1</version>
+		</dependency> 
 		
-		
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.2.2</version>
+		</dependency>
+
+
 		
 				
 		<!-- AspectJ -->
