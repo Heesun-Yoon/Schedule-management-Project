@@ -14,6 +14,45 @@
 		</layout>
 	</appender>
 	
+	
+	<!-- log File에 기록 -->
+<!-- 	<appender name="logFile" class="org.apache.log4j.DailyRollingFileAppender">
+		log파일 생성 위치
+		<param name="file" value="D:\Toy Project\Study_Project\logs\spring\spring.log" />
+		<param name="Append" value="true" />
+		<param name="DatePattern" value=".yyyy-mm-dd" />
+		<layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %p [%C{10}] %m [%X{userId}]%n" />
+        </layout> 
+	</appender> -->
+	
+	<appender name="LOGFILE-XML" class="org.apache.log4j.FileAppender">
+        <param name="file" value="D:\Toy Project\Study_Project\logs\spring\spring.log"/>
+        <param name="Append" value="true"/>
+        <layout class="org.apache.log4j.PatternLayout">
+        	<param name="ConversionPattern" value="%d %p [%C{10}] %m [%X{userId}]%n" />
+        </layout>
+    </appender>
+	
+	
+	
+	<!-- additivity 속성은 다른 logger에 영향을 줄 것인지 유무  -->
+	<logger name="jdbc.sqlonly" additivity="false"> 
+		<level value="info"/> 
+		<appender-ref ref="logFile"/> 
+	</logger> 
+	
+	<logger name="jdbc.resultsettable" additivity="false"> 
+		<level value="info"/> 
+		<appender-ref ref="logFile"/>
+	</logger>
+
+
+	
+	
+	
+	
+	
 	<!-- Application Loggers -->
 	<!-- com.project.common 밑으로 info level 이상의 log 기록들을 찍겠다라는 의미 -->
 	<logger name="com.project.common">
@@ -42,6 +81,7 @@
 		<priority value="warn" />
 		<!-- appender-ref 로 설정한 걸로 사용하겠다는 의미 -->
 		<appender-ref ref="console" />
+		<appender-ref ref="logFile" />
 	</root>
 	
 </log4j:configuration>
