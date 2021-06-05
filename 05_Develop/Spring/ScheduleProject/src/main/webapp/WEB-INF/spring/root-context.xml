@@ -24,6 +24,7 @@
 	
 	
 	<!-- log4j -->
+	<!-- DB에도 log를 찍기위한 config -->
 	<bean id="log4j" class="net.sf.log4jdbc.Log4jdbcProxyDataSource">
 		<constructor-arg ref="datasource"></constructor-arg>	
 		<property name="logFormatter">
