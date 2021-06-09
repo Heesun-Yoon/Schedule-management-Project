@@ -23,7 +23,7 @@
 	
 	
 	<!-- Tiles ViewResolver -->
-	<beans:bean class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
+	<beans:bean class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
 		<beans:property name="definitions" value="/WEB-INF/tiles.xml"></beans:property>
 	</beans:bean>
 	<beans:bean class="org.springframework.web.servlet.view.UrlBasedViewResolver">

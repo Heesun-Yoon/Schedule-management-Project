@@ -16,7 +16,7 @@
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	
 	<!-- MyBatis 설정 -->
-	<bean id="datasource"
+	<bean id="dataSource"
 		class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName"
 			value="oracle.jdbc.driver.OracleDriver"></property>
@@ -30,7 +30,7 @@
 	<!-- log4j -->
 	<!-- DB에도 log를 찍기위한 config -->
 	<bean id="log4j" class="net.sf.log4jdbc.Log4jdbcProxyDataSource">
-		<constructor-arg ref="datasource"></constructor-arg>	
+		<constructor-arg ref="dataSource"></constructor-arg>	
 		<property name="logFormatter">
 			<bean class="net.sf.log4jdbc.tools.Log4JdbcCustomFormatter">
 				<property name="loggingType" value="MULTI_LINE"></property>
@@ -39,19 +39,26 @@
 		</property>
 	</bean>
 	
-	<bean id="sessionfactory"
+	<bean id="sqlSessionFactory"
 		class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="log4j"></property>
 		<!-- SQL 파일위치 -->
-		<property name="mapperLocations" value="classpath*:com/project/**/mapper/*.xml"></property>
+		<property name="mapperLocations" value="classpath*:/mappers/*.xml"></property>
 		<!-- mybatis 설정파일 -->
-		<property name="configLocation" value="classpath:/mybatis-config.xml"></property>
+		<property name="configLocation" value="classpath:mybatis-config.xml"></property>
 	</bean>
 
 	<!-- sqlSession -->
-	<bean class="org.mybatis.spring.SqlSessionTemplate">
+<!-- 	<bean class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg ref="sessionfactory"></constructor-arg>
+	</bean> -->
+	
+	<!-- SqlSessionTemplate --> 
+	<bean id="sqlSessoinTemplate" class="org.mybatis.spring.SqlSessionTemplate"> 
+		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory">
+		</constructor-arg> 
 	</bean>
+
 	
 	<!-- 지정된 베이스 패키지에서 DAO(Mapper) 를 검색하여 등록합니다. -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer"> 
