@@ -17,8 +17,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class DBTest {
 	
     @Inject
-//    private DataSource ds;
-    private SqlSessionTemplate ds;
+    private DataSource ds;
+//    private SqlSessionTemplate ds;
     
  
     @Test

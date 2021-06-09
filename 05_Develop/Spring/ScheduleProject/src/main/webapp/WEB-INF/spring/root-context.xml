@@ -29,7 +29,7 @@
 	
 	<!-- log4j -->
 	<!-- DB에도 log를 찍기위한 config -->
-	<bean id="log4j" class="net.sf.log4jdbc.Log4jdbcProxyDataSource">
+<!-- 	<bean id="log4j" class="net.sf.log4jdbc.Log4jdbcProxyDataSource">
 		<constructor-arg ref="dataSource"></constructor-arg>	
 		<property name="logFormatter">
 			<bean class="net.sf.log4jdbc.tools.Log4JdbcCustomFormatter">
@@ -37,11 +37,11 @@
 				<property name="sqlPrefix" value="[SQL]"></property>
 			</bean>
 		</property>
-	</bean>
+	</bean> -->
 	
 	<bean id="sqlSessionFactory"
 		class="org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="dataSource" ref="log4j"></property>
+		<property name="dataSource" ref="dataSource"></property>
 		<!-- SQL 파일위치 -->
 		<property name="mapperLocations" value="classpath*:/mappers/*.xml"></property>
 		<!-- mybatis 설정파일 -->
@@ -67,7 +67,7 @@
 	
 	<!-- 트랜잭션 매니저 bean 을 등록합니다. -->
 	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-		<property name="dataSource" ref="log4j"></property>
+		<property name="dataSource" ref="dataSource"></property>
 	</bean>
 	
 	<tx:annotation-driven/>
