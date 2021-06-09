@@ -1,31 +1,35 @@
 package com.project.test;
 
-import java.sql.DriverManager;
-import java.sql.SQLException;
+
+import java.sql.Connection;
+
+import javax.inject.Inject;
+import javax.sql.DataSource;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = { "file:src/main/webapp/WEB-INF/spring/**/root-context.xml" })
 public class DBTest {
 	
-	public static void main(String[] args) {
-		
+    @Inject
+    private DataSource ds;
+ 
+    @Test
+    public void testConnection(){
+    	
+        try (Connection con = ds.getConnection()) {
+ 
+            System.out.println("DB연결 성공 !!");
+ 
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
-	
-	String driver = "oracle.jdbc.driver.OracleDriver";
-	String url = "jdbc:oracle:thin:@localhost:1521:xe";
-	String user = "toy";
-	String password = "1234";
-	
-	try {
-		Class.forName(driver);
-		System.out.println("jdbc driver 로딩 성공");
-		DriverManager.getConnection(url, user, password);
-		System.out.println("오라클 연결 성공");
-	} catch (ClassNotFoundException e) {
-		System.out.println("jdbc driver 로딩 실패");
-	} catch (SQLException e) {
-		System.out.println("오라클 연결 실패");
-	}
-	
-}
 
 }
