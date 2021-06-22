@@ -1,4 +1,4 @@
-package com.project.test;
+package com.project.common;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -7,15 +7,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import lombok.extern.log4j.Log4j;
 
-//해당 class가 controller 역할을 하는 class임을 명시
 @Controller
 @Log4j
-@RequestMapping(value = "/maintest.do")
 public class MainTest {
-	
+	//메소드 에서만 사용
+	@RequestMapping(value="/maintest.do")
 	public String test(HttpServletRequest request, HttpServletRequest response) {
 		//JSP 호출
-		return "maintest";
+		return "/maintest";
 	}
 
 }
