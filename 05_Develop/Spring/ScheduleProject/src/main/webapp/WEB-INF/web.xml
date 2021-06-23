@@ -30,12 +30,6 @@
 		<!-- <url-pattern>/</url-pattern> -->
 		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
-	
-	<servlet-mapping>
-		<servlet-name>common</servlet-name>
-		<!-- <url-pattern>/</url-pattern> -->
-		<url-pattern>/</url-pattern>
-	</servlet-mapping>
 
 
 	<!-- 인코딩 필터(POST -> UTF-8) -->
