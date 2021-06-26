@@ -1,7 +1,7 @@
-<!-- front 작업 (Main Page) -->
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,26 +12,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet"> -->
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Prompt&display=swap" rel="stylesheet">
     <style>
 
-    /* @font-face {
+    @font-face {
         font-family: 'IBMPlexSansKR-Regular';
         src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
         font-weight: normal;
         font-style: normal;
-    } */
+    }
         /* css 작업 */
         html,body {
             margin: 0;
             width: 100%;
             height: 100%;
             /* font-family: 'Nanum Gothic', sans-serif; */
-            /* font-family: 'IBMPlexSansKR-Regular'; */
-            /* font-family: 'Do Hyeon', sans-serif; */
-            font-family: 'Prompt', sans-serif;
+            font-family: 'IBMPlexSansKR-Regular';
         }
 
         #wrap {
@@ -87,79 +82,24 @@
             border: 1px solid black;
             flex: 0.05;
         }
-
-        #top_icon1{
-            /* border: 1px solid black; */
-            width: 21px;
-            height: 21px;
-            margin-left: 40px;
-            position: relative;
-        }
-
-        #top_icon2 {
-            /* border: 1px solid black; */
-            width: 31px;
-            height: 31px;
-            margin-left: 25px;
-            position: relative;
-        }
-
-        #img1 {
-            border-right: 2px solid #aaa;
-            width: 20px;
-            height: 20px;
-            position: absolute;
-            top: 50%;
-            margin-top: 5px;
-            padding-right: 10px;
-        }
-
-        #img2 {
-            /* border: 1px solid black; */
-            width: 30px;
-            height: 30px;
-            position: absolute;
-            top: 50%;
-            margin-top: -5px;
-        }
-
-        #top_txt {
-            /* border: 1px solid black; */
-            margin-left: 20px;
-            display: flex;
-            align-items: center;
-            font-size: 15px;
-            font-weight: bold;
-        }
-
         
 
-
+        #img1 {
+            width: 30px;
+            height: 30px;
+        }
 
 
         
     </style>
-
 </head>
-
 <body>
-
+	
     <!-- 전체 레이아웃 시작 -->
     <div id="wrap">
         <!-- 상단메뉴 시작 -->
         <div id=top>
-            <span id="top_icon1">
-                <img src="D:\Toy Project\Study_Project\05_Develop\Spring\ScheduleProject\src\main\webapp\resources\images\home.png" id="img1">
-            </span>
-            <span id="top_icon2">
-                <img src="D:\Toy Project\Study_Project\05_Develop\Spring\ScheduleProject\src\main\webapp\resources\images\time.png" id="img2">
-            </span>
-            <span id="top_txt">
-                Schedule M.
-            </span>
-            <span id="top_icon3">
-                <img src="D:\Toy Project\Study_Project\05_Develop\Spring\ScheduleProject\src\main\webapp\resources\images\alram.png" id="img3">
-            </span>
+            <div id="top_icon"><img src="resources/images/time.png" id="img1"></div>
         <!-- 상단메뉴 끝 -->
         </div>
 
@@ -200,5 +140,4 @@
     </div>
 
 </body>
-
 </html>

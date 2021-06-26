@@ -12,6 +12,6 @@ import lombok.extern.log4j.Log4j;
 public class Main {
 	@RequestMapping(value="/main.do")
 	public String mainPage (HttpServletRequest request, HttpServletRequest response) {
-		return "/main";
+		return "/main/main";
 	}
 }
