@@ -83,6 +83,7 @@
             border-bottom: 1.5px solid #A6A6A6;
             flex: 0.1;
             height: 100px;
+            position: relative;
         }
 
         #schedule_filter {
@@ -181,10 +182,26 @@
             margin-left: 5%;
         }
 
-        #list_ul {
+        #detail_menu2 {
+            /* border: 1px solid black; */
+            color: #808080;
+            position: absolute;
+            top: 17%;
+            margin-left: 5%;
+        }
+
+        #list_ul1 {
             /* border: 1px solid black; */
             position: absolute;
             top: 5%;
+            list-style: none;
+            font-size: 15px;
+        }
+
+        #list_ul2 {
+            /* border: 1px solid black; */
+            position: absolute;
+            top: 19%;
             list-style: none;
             font-size: 15px;
         }
@@ -241,12 +258,27 @@
             height: 30px;
         }
 
-        #img9 {
+        #img9,
+        #img10{
             width: 15px;
             height: 15px;
         }
 
+        #img11 {
+            /* border: 1px solid black; */
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+        }
 
+
+        #sc_title{
+            /* border: 1px solid black; */
+            margin-left: 20px;
+            position: absolute;
+            top: 20%;
+            height: 30px;
+        }
 
         #top_txt {
             /* border: 1px solid black; */
@@ -256,6 +288,22 @@
             font-size: 15px;
             font-weight: bold;
         }
+
+
+        #sc_title_txt {
+            height: 20px;
+            vertical-align: middle;
+        }
+
+        #sc_sub_title{
+            position: absolute;
+            top: 50%;
+            margin-left: 35px;
+            font-size: 13px;
+            color: #808080;
+        }
+
+        
 
         
 
@@ -318,9 +366,19 @@
                         <span id="detail_txt1">My Schedule List</span>
                     </span>
                     <span id="detail_list1">
-                        <ul id="list_ul">
+                        <ul id="list_ul1">
                             <li><div class="dot"></div>daily schedule</li>
                             <li><div class="dot"></div>important schedule</li>
+                        </ul>
+                    </span>
+                    <span id="detail_menu2">
+                        <img src="D:\Toy Project\Study_Project\05_Develop\Spring\ScheduleProject\src\main\webapp\resources\images\friends.png" id="img10">
+                        <span id="detail_txt1">Friends Schedule List</span>
+                    </span>
+                    <span id="detail_list2">
+                        <ul id="list_ul2">
+                            <li><div class="dot"></div>f_daily schedule</li>
+                            <li><div class="dot"></div>f_important schedule</li>
                         </ul>
                     </span>
                 <!-- 좌측 메뉴 상세 끝 -->
@@ -331,6 +389,15 @@
                 <!-- 스케줄 타이틀 시작 -->
                 <div id="schedule_title">
                 <!-- 스케줄 타이틀 끝 -->
+                    <span id="sc_title">
+                        <!-- <span id="sc_title_img">  -->
+                            <img src="D:\Toy Project\Study_Project\05_Develop\Spring\ScheduleProject\src\main\webapp\resources\images\bookmark.png" id="img11">
+                        <!-- </span> -->
+                        <span id="sc_title_txt">Daily Schedule</span>
+                    </span>
+                    <span id="sc_sub_title">
+                        ┖ Daily plan for 2020
+                    </span>
                 </div>
 
                 <!-- 필터 시작 -->
