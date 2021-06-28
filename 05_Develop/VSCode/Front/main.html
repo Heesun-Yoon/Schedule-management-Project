@@ -89,6 +89,7 @@
         #schedule_filter {
             border-bottom: 1.5px solid #A6A6A6;
             flex: 0.05;
+            position: relative;
         }
 
         #top_icon1{
@@ -271,6 +272,39 @@
             vertical-align: middle;
         }
 
+        #img12 {
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+        }
+
+        #img13 {
+            /* border: 1px solid black; */
+            width: 20px;
+            height: 20px;
+            margin-left: 1400px;
+            position: absolute;
+            top: 30%;
+        }
+
+        #img14 {
+            /* border: 1px solid black; */
+            width: 20px;
+            height: 20px;
+            margin-left: 1450px;
+            position: absolute;
+            top: 30%;
+        }
+
+        #img15 {            
+            /* border: 1px solid black; */
+            width: 20px;
+            height: 20px;
+            margin-left: 1500px;
+            position: absolute;
+            top: 30%;
+        }
+
 
         #sc_title{
             /* border: 1px solid black; */
@@ -303,7 +337,113 @@
             color: #808080;
         }
 
+        #heart {
+            /* border: 1px solid black; */
+            margin-left: 1550px;
+            position: absolute;
+            top: 30%;
+        }
+
+        #heart_cnt{
+            /* border: 1px solid black; */
+            height: 20px;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+
+        #filter{
+            /* border: 1px solid black; */
+            position: absolute;
+            top: 30%;
+            /* margin-left: 20px; */
+        }
+
+        .sc_filter {
+            /* border: 1px solid black; */
+            border-right: 1px solid #aaa;
+            margin-left: 20px;
+            padding-right: 7px;
+        }
+
+        .sc_section{
+            border: 2px solid #ddd;
+            background-color: #F2F2F2;
+            width: 490px;
+            height: 720px;
+            margin-top: 20px;
+            margin-left: 50px;
+            position: absolute;
+            top: 10;
+        }
+
+        #doing_section {
+            margin-left: 570px;
+        }
+
+        #done_section {
+            margin-left: 1090px;
+        }
+
+        .sc_txt{
+            /* border: 1px solid black; */
+            font-size: 22px;
+            font-weight: bold;
+            position: absolute;
+            top: 2%;
+            margin-left: 15px;
+        }
+
+        .sc_add {
+            /* border: 1px solid black; */
+            background-color: #FCFCFC;
+            border-radius: 5px;
+            position: absolute;
+            top: 9%;
+            width: 450px;
+            height: 40px;
+            margin-left: 15px;
+            line-height: 40px;
+            font-size: 14px;
+            color: #aaa;
+        }
         
+        .sc_box {
+            background-color: #F9F9F9;
+            border: 1px solid #aaa;
+            border-radius: 0px 10px 10px 0px;
+            border-left: 4px solid black;
+            position: relative;
+            top: 15%;
+            width: 450px;
+            height: 170px;
+            margin-left: 15px;
+            margin-top: 20px;
+        }
+
+        #todo_1 {
+            border-left: 4px solid #FCD54A;
+        }
+
+        #todo_2 {
+            border-left: 4px solid #FB9297;
+        }
+
+        #doing_1 {
+            border-left: 4px solid #75B5FB;
+        }
+
+        #doing_2 {
+            border-left: 4px solid #A1DA53;
+        }
+
+        #doing_3 {
+            border-left: 4px solid #FCD54A;
+        }
+
+        #done_1 {
+            border-left: 4px solid #75B5FB;
+        }
+
 
         
 
@@ -398,15 +538,75 @@
                     <span id="sc_sub_title">
                         ┖ Daily plan for 2020
                     </span>
+                    <span id="heart">
+                        <img src="D:\Toy Project\Study_Project\05_Develop\Spring\ScheduleProject\src\main\webapp\resources\images\heart.png" id="img12">
+                        <span id="heart_cnt">3</span>
+                    </span>
+                    <span id="plus">
+                        <img src="D:\Toy Project\Study_Project\05_Develop\Spring\ScheduleProject\src\main\webapp\resources\images\plus.png" id="img13">
+                    </span>
+                    <span id="edit">
+                        <img src="D:\Toy Project\Study_Project\05_Develop\Spring\ScheduleProject\src\main\webapp\resources\images\edit.png" id="img14">
+                    </span>
+                    <span id="del">
+                        <img src="D:\Toy Project\Study_Project\05_Develop\Spring\ScheduleProject\src\main\webapp\resources\images\delete.png" id="img15">
+                    </span>
                 </div>
 
                 <!-- 필터 시작 -->
                 <div id="schedule_filter">
+                    <span id="filter">
+                        <span id="filter1" class="sc_filter">
+                            Tag ∨
+                        </span>
+                        <span id="filter2" class="sc_filter">
+                            Priority ∨
+                        </span>
+                        <span id="filter3" class="sc_filter">
+                            Date ∨
+                        </span>
+                        <span id="filter4" class="sc_filter">
+                            Color label ∨
+                        </span>
+                    </span>
                 <!-- 필터 끝 -->
                 </div>
 
                 <!-- 스케줄 표 시작 -->
                 <div id="schedule">
+                    <div id="todo_section" class="sc_section">
+                        <div id="todo_txt" class="sc_txt">To do (2)</div>
+                        <div id="todo_add" class="sc_add">+ Add a Schedule</div>
+                        <div id="todo_1" class="sc_box">
+
+                        </div>
+                        <div id="todo_2" class="sc_box">
+
+                        </div>
+                    </div>
+
+                    <div id="doing_section" class="sc_section">
+                        <div id="doing_txt" class="sc_txt">Doing (3)</div>
+                        <div id="doing_add" class="sc_add">+ Add a Schedule</div>
+                        <div id="doing_1" class="sc_box">
+                            
+                        </div>
+                        <div id="doing_2" class="sc_box">
+                            
+                        </div>
+                        <div id="doing_3" class="sc_box">
+                            
+                        </div>
+                    </div>
+
+                    <div id="done_section" class="sc_section">
+                        <div id="done_txt" class="sc_txt">Done (1)</div>
+                        <div id="done_add" class="sc_add">+ Add a Schedule</div>
+                        <div id="done_1" class="sc_box">
+                            
+                        </div>
+                    </div>
+
                 <!-- 스케줄 표 끝 -->
                 </div>
             </div>
