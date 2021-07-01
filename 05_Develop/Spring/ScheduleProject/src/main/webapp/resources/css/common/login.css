@@ -1,0 +1,140 @@
+@charset "UTF-8";
+
+        html, body {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            font-family: 'Prompt', sans-serif;
+        }
+
+        #wrap {
+            /* border: 1px solid black; */
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #container{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background-color: #E7E7E7;
+        }
+
+        #login_box {
+            border: 1px solid transparent ;
+            border-radius: 5px;
+            width: 800px;
+            height: 400px;
+            position: absolute;
+            top: 50%;
+            margin-top: -200px;
+            left: 50%;
+            margin-left: -400px;
+            display: flex;
+            flex-direction: row;
+            box-shadow: 5px 5px 5px #CDCECF;
+        }
+
+        #left_box {
+            /* border: 1px solid black; */
+            border-radius: 5px 0px 0px 5px;
+            width: 400px;
+            height: 400px;
+            background-color: #2D7EF9;
+        }
+
+        #right_box {
+            /* border: 1px solid black; */
+            border-radius: 0px 5px 5px 0px;
+            width: 400px;
+            height: 400px;
+            background-color: #F2F2F2;
+        }
+
+        #left_txt1 {
+            /* border: 1px solid black; */
+            font-size: 30px;
+            text-align: right;
+            padding-right: 30px;
+            font-weight: bold;
+            color: white;
+            margin-top: 90px;
+        }
+
+        #left_txt2 {
+            /* border: 1px solid black; */
+            font-size: 20px;
+            text-align: right;
+            padding-right: 30px;
+            color: white;
+            margin-top: 20px;
+        }
+
+        #left_txt3 {
+            /* border: 1px solid black; */
+            font-size: 15px;
+            text-align: right;
+            padding-right: 30px;
+            color: #D9D9D9;
+            margin-top: 20px;
+        }
+
+        #id_input_box {
+            border-bottom: 2px solid #4D8FF8;
+            margin-top: 140px;
+            padding-left: 20px;
+            padding-bottom: 5px;
+            width: 250px;
+            margin-left: 60px;
+            font-size: 13px;
+        }
+
+        #id_input {
+            border: 0px;
+            margin-left: 20px;
+            background-color: #F2F2F2;
+            outline: none;
+        }
+
+        #pw_input_box {
+            border-bottom: 2px solid #4D8FF8;
+            margin-top: 20px;
+            padding-left: 20px;
+            padding-bottom: 5px;
+            width: 250px;
+            margin-left: 60px;
+            font-size: 13px;
+        }
+
+        #pw_input {
+            border: 0px;
+            margin-left: 12px;
+            background-color: #F2F2F2;
+            outline: none;
+        }
+
+        #login_btn {
+            border-radius: 3px;
+            width: 80px;
+            height: 30px;
+            background-color: #2D7EF9;
+            color: white;
+            text-align: center;
+            padding-top: 5px;
+            margin-top: 40px;
+            margin-left: 150px;
+            font-size: 14px;
+        }
+
+        #forgot_txt {
+            border-bottom: 1px solid #aaa;
+            width: 110px;
+            margin-left: 135px;
+            margin-top: 10px;
+            font-size: 13px;
+            color: #808080;
+            font-style: italic;
+        }
+        
