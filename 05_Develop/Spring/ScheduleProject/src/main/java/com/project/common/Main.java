@@ -11,7 +11,7 @@ import lombok.extern.log4j.Log4j;
 @Controller
 @Log4j
 public class Main {
-	@RequestMapping(value="/main.do", method = { RequestMethod.POST, RequestMethod.GET })
+	@RequestMapping(value="/main.do", method = RequestMethod.POST)
 	public String mainPage (HttpServletRequest request, HttpServletRequest response) {
 		return "/main/main";
 	}
