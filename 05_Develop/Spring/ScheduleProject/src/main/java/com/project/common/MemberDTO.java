@@ -1,0 +1,51 @@
+package com.project.common;
+
+public class MemberDTO {
+	
+	private int seq;
+	private String name;
+	private String id;
+	private String pw;
+	private String address;
+	private int delflag;
+	
+	
+	public int getSeq() {
+		return seq;
+	}
+	public void setSeq(int seq) {
+		this.seq = seq;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getPw() {
+		return pw;
+	}
+	public void setPw(String pw) {
+		this.pw = pw;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public int getDelflag() {
+		return delflag;
+	}
+	public void setDelflag(int delflag) {
+		this.delflag = delflag;
+	}
+	
+
+}

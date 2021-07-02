@@ -12,7 +12,11 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 public class Main {
 	@RequestMapping(value="/main.do", method = RequestMethod.POST)
-	public String mainPage (HttpServletRequest request, HttpServletRequest response) {
+	public String mainPage (HttpServletRequest request, HttpServletRequest response, String id, String pw) {
+		
+		System.out.println(id);
+		System.out.println(pw);
+		
 		return "/main/main";
 	}
 }
