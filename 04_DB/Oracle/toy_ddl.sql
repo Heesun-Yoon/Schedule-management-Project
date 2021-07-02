@@ -97,3 +97,12 @@ CREATE SEQUENCE SEQ_SCHEDULE; --(완료)
 CREATE SEQUENCE SEQ_FILE; --(완료)
 CREATE SEQUENCE SEQ_BOOKMARK; --(완료)
 CREATE SEQUENCE SEQ_COMMENT; --(완료)
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+-- 회원 test 
+insert into TBL_MEMBER (seq, name, id, pw, address, delflag) values (SEQ_MEMBER.nextVal, 'HeeSun Yoon', 'HeeSun' ,'1234', '경기도 구리시', 0 );
+
+
+

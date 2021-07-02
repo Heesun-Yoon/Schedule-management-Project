@@ -26,13 +26,17 @@
                     </div>
                 </div>
                 <div id="right_box">
-                    <div id="id_input_box">
-                        ID<input id="id_input" type="text" placeholder="Please enter your id" size="25px">
-                    </div>
-                    <div id="pw_input_box">
-                        PW<input id="pw_input" type="password" placeholder="Please enter your pw" size="25px">
-                    </div>
-                    <div id="login_btn">Login</div>
+                    <form name="login_form" action="/common/main.do" method="POST">
+	                    <div id="id_input_box">
+	                        ID<input name="id" id="id_input" type="text" placeholder="Please enter your id" size="25px">
+	                    </div>
+	                    <div id="pw_input_box">
+	                        PW<input name="pw" id="pw_input" type="password" placeholder="Please enter your pw" size="25px">
+	                    </div>
+	                    <div id="login_btn">
+	                    	<input type="submit" value="login" id="login_btn_in">
+	                    </div>
+	                </form>
                     <div id="forgot_txt">Forgot Password?</div>
                 </div>
             </div>

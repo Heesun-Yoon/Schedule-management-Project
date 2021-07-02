@@ -116,17 +116,24 @@
         }
 
         #login_btn {
-            border-radius: 3px;
+		    border-radius: 3px;
             width: 80px;
             height: 30px;
             background-color: #2D7EF9;
-            color: white;
             text-align: center;
             padding-top: 5px;
             margin-top: 40px;
             margin-left: 150px;
-            font-size: 14px;
         }
+        
+        #login_btn_in {
+            border: 0px;
+            outline: none;
+            background-color: #2D7EF9;
+            color: white;
+            font-size: 14px; 
+        }
+        
 
         #forgot_txt {
             border-bottom: 1px solid #aaa;
@@ -137,4 +144,13 @@
             color: #808080;
             font-style: italic;
         }
+        
+        
+        
+        #login_btn:hover,
+        #login_btn_in:hover {
+        	cursor: pointer;
+        }
+        
+        
         
