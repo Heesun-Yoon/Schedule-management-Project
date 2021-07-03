@@ -6,8 +6,8 @@
 <mapper namespace="member">
 
 
-<select id="loginCheck" resultType="String" parameterType="map">
-	select * from tbl_member where id=#{id} and pw=#{pw}
+<select id="loginCheck" resultType="mdto" parameterType="map">
+	select seq,name,id,pw,address,delflag from tbl_member where id=#{id} and pw=#{pw}
 </select>
 
 

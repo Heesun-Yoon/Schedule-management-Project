@@ -1,6 +1,7 @@
 package com.project.common;
 
 import java.util.HashMap;
+//import java.util.List;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -40,8 +41,13 @@ public class MainController {
 		
 		List<MemberDTO> result = dao.list(map);		
 
-		System.out.println("result: "+result);
+//		System.out.println("result: "+ result.getSeq());
 		
+
+		request.setAttribute("result", result);
+
+		
+
 		return "/main/main";
 	}
 }

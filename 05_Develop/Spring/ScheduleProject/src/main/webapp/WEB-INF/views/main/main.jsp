@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>	
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,6 +29,9 @@
             </span>
             <span id="top_txt">
                 Schedule M.
+                <%-- <c:forEach items="${result}" var="dto">
+                	<div>${dto.name}</div>
+                </c:forEach> --%>
             </span>
             <span id="top_icon3">
                 <img src="resources\images\alram.png" id="img3" class="top_right_img">
@@ -44,7 +48,9 @@
             <span id="top_search">
                 <img src="resources\images\search.png" id="img7">
             </span>
-            <span id="top_profile"></span>
+            <span id="top_profile">
+            	<img src="resources\images\user.png" id="profile_img">
+            </span>
         <!-- 상단메뉴 끝 -->
         </div>
 
