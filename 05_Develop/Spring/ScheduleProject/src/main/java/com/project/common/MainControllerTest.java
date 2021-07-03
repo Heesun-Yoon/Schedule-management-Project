@@ -9,11 +9,11 @@ import lombok.extern.log4j.Log4j;
 
 @Controller
 @Log4j
-public class MainTest {
-	//¸Þ¼Òµå ¿¡¼­¸¸ »ç¿ë
+public class MainControllerTest {
+	//ï¿½Þ¼Òµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 	@RequestMapping(value="/maintest.do")
 	public String test(HttpServletRequest request, HttpServletRequest response) {
-		//JSP È£Ãâ
+		//JSP È£ï¿½ï¿½
 		return "/maintest";
 	}
 

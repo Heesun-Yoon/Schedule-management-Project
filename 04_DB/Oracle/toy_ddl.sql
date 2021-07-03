@@ -104,5 +104,6 @@ CREATE SEQUENCE SEQ_COMMENT; --(완료)
 -- 회원 test 
 insert into TBL_MEMBER (seq, name, id, pw, address, delflag) values (SEQ_MEMBER.nextVal, 'HeeSun Yoon', 'HeeSun' ,'1234', '경기도 구리시', 0 );
 
+select * from tbl_member;
 
 

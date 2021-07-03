@@ -10,8 +10,8 @@ import lombok.extern.log4j.Log4j;
 
 @Controller
 @Log4j
-public class Login {
-	@RequestMapping(value="/login.do", method = RequestMethod.POST )
+public class LoginController {
+	@RequestMapping(value="/login.do", method = {RequestMethod.POST, RequestMethod.GET} )
 	public String loginPage (HttpServletRequest request, HttpServletRequest response) {
 		return "/common/login";
 	}
