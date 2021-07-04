@@ -45,6 +45,13 @@
     
     <!-- 전체 레이아웃 끝 -->
     </div>
+    
+    <!-- js -->
+    <script>
+	    <c:if test="${result_flag eq flase}" >
+	    	alert('로그인 정보가 일치하지 않습니다.');
+	    </c:if>
+    </script>
 
 </body>
 </html>

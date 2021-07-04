@@ -15,8 +15,12 @@ public class MemberDAO implements IMemberDAO{
 
 	@Override
 	public List<MemberDTO> list(HashMap<String, String> map) {
-		
 		return template.selectList("member.loginCheck",map);
+	}
+
+	@Override
+	public int list_cnt(HashMap<String, String> map) {
+		return template.selectOne("member.loginCheck_cnt",map);
 	}
 
 

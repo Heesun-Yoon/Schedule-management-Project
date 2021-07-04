@@ -107,3 +107,5 @@ insert into TBL_MEMBER (seq, name, id, pw, address, delflag) values (SEQ_MEMBER.
 select * from tbl_member;
 select seq,name,id,pw,address,delflag from tbl_member where id='HeeSun' and pw=1234;
 
+select count(*) as cnt from tbl_member where id='HeeSun' and pw=123;
+
