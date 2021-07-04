@@ -28,6 +28,12 @@ public class MainController {
 		//2. DB에서 가져온 데이터와 비교
 		//3. DTO 반환 -> JSP 호출
 		
+		//반환값O
+		//1. 단일값 반환 : 단일 레코드 + 단일 컬럼 : int or double or String
+		//2. 다중값 반환 : 단일 레코드 + 다중 컬럼 : DTO
+		//3. 다중값 반환 : 다중 레코드 + 단일 컬럼 : List<String>
+		//4. 다중값 반환 : 다중 레코드 + 다중 컬럼 : List<DTO>
+		
 		System.out.println(id);
 		System.out.println(pw);
 				
@@ -41,12 +47,25 @@ public class MainController {
 		
 		List<MemberDTO> result = dao.list(map);		
 
-//		System.out.println("result: "+ result.getSeq());
+		System.out.println("result seq: "+ result.get(0).getSeq());
+		System.out.println("result name: "+ result.get(0).getName());
+		System.out.println("result id: "+ result.get(0).getId());
+		System.out.println("result pw: "+ result.get(0).getPw());
+		System.out.println("result address: "+ result.get(0).getAddress());
+		System.out.println("result delflag: "+ result.get(0).getDelflag());
+//		System.out.println("result: "+ result.get(0).toString());
+		//result: com.project.common.MemberDTO@50834168
 		
 
 		request.setAttribute("result", result);
 
-		
+//		if(result.getSeq() > 0) {
+//			//로그인 성공
+//			request.setAttribute("result", result);
+//			return "/main/main";
+//		} else {
+//			return "/common/login";
+//		}
 
 		return "/main/main";
 	}
