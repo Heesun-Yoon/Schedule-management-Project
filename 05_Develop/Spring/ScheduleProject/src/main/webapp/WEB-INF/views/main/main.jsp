@@ -19,6 +19,7 @@
 <body>
      <!-- 전체 레이아웃 시작 -->
     <div id="wrap">
+    <input type="hidden" id=“hid_result” value =“&{result_flag}”>
         <!-- 상단메뉴 시작 -->
         <div id=top>
             <span id="top_icon1">
@@ -214,5 +215,16 @@
 
     <!-- 전체 레이아웃 끝 -->
     </div>
+    
+    
+    <script>
+    
+    if($('#hid_result').val() == "false") {
+    	alert('로그인 실패');
+    } 
+    
+    </script>
+    
+    
 </body>
 </html>

@@ -16,6 +16,7 @@
 
    <!-- 전체 레이아웃 시작 -->
     <div id="wrap">
+        <input type="hidden" id=“hid_result” value =“&{result_flag}”>
         <div id="container">
             <div id="login_box">
                 <div id="left_box">
@@ -48,9 +49,13 @@
     
     <!-- js -->
     <script>
-	    <c:if test="${result_flag eq flase}" >
+	    /* <c:if test="${result_flag eq flase}" >
 	    	alert('로그인 정보가 일치하지 않습니다.');
-	    </c:if>
+	    </c:if> */
+	    
+		    if($('#hid_result').val() == "false") {
+		    	alert('로그인 실패');
+		    } 
     </script>
 
 </body>

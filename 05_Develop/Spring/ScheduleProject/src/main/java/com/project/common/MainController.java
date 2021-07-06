@@ -75,11 +75,19 @@ public class MainController {
 //		if(result.get(0)==null) {
 			//로그인 성공
 			request.setAttribute("result", result);
-			return "/main/main";
+//			return "/main/main";
+			return "/common/login";
 		} else {
 			request.setAttribute("result", result_flag);
 			return "/common/login";
-		}
+		} 
+//		else if(result.get(0) == null){
+//			//페이지 로드시
+//			request.setAttribute("result", start_flag);
+//			return "/common/login";
+//		} else {
+//			return "/main/main";
+//		}
 
 //		return "/main/main";
 	}

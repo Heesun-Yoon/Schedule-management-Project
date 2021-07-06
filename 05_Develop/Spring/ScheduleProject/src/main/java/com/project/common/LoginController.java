@@ -13,7 +13,7 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 public class LoginController {
 	@RequestMapping(value="/login.do", method = {RequestMethod.POST, RequestMethod.GET} )
-	public String loginPage (MemberDTO dto, HttpServletRequest request, HttpServletRequest response) {
+	public String loginPage (MemberDTO dto, HttpServletRequest request, HttpServletRequest response, String id, String pw) {
 		
 		//로그인 세션
 		HttpSession session = request.getSession();
@@ -24,6 +24,17 @@ public class LoginController {
 		session.setAttribute("seq", dto.getSeq());
 		session.setAttribute("id", dto.getSeq());
 		session.setAttribute("pw", dto.getPw());
+		
+
+		String result_flag = "start";
+		
+		System.out.println("로그인"+id);
+		System.out.println("로그인"+pw);
+		
+		if(id==null && pw==null) {
+			request.setAttribute("result", result_flag);
+			return "/common/login";
+		}
 		
 		return "/common/login";
 	}
