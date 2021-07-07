@@ -2,7 +2,6 @@
 
 상단에 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 선언 (제이쿼리)
 
-<script></script> 영역 </body> 아래로 뺄 것
 
 <input type="hidden" id=“hid_result” value =“&{result_flag}”> -> <input type="hidden" id="hid_result" value ="&{result_flag}"/> (큰 따옴표 변경 “ -> ")
 
