@@ -62,34 +62,20 @@ public class MainController {
 //		System.out.println("result: "+ result.get(0).toString());
 		//result: com.project.common.MemberDTO@50834168
 		
-//		if((result.get(0).getSeq()) > 0) {
-//			System.out.println("결과 존재");
-//		}else {
-//			System.out.println("결과 미존재");
-//		}
-//		
+
 
 		request.setAttribute("result", result);
 
 		if(result_cnt > 0) {
-//		if(result.get(0)==null) {
 			//로그인 성공
-			request.setAttribute("result", result);
-//			return "/main/main";
-			return "/common/login";
+			request.setAttribute("result", !result_flag);
+			return "/main/main";
 		} else {
 			request.setAttribute("result", result_flag);
 			return "/common/login";
 		} 
-//		else if(result.get(0) == null){
-//			//페이지 로드시
-//			request.setAttribute("result", start_flag);
-//			return "/common/login";
-//		} else {
-//			return "/main/main";
-//		}
 
-//		return "/main/main";
+
 	}
 
 }

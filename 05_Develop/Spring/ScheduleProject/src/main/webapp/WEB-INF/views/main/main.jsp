@@ -215,8 +215,10 @@
 
     <!-- 전체 레이아웃 끝 -->
     </div>
+       
     
-    
+</body>
+
     <script>
     
     if($('#hid_result').val() == "false") {
@@ -224,7 +226,5 @@
     } 
     
     </script>
-    
-    
-</body>
+
 </html>

@@ -28,8 +28,8 @@ public class LoginController {
 
 		String result_flag = "start";
 		
-		System.out.println("로그인"+id);
-		System.out.println("로그인"+pw);
+//		System.out.println("로그인"+id);
+//		System.out.println("로그인"+pw);
 		
 		if(id==null && pw==null) {
 			request.setAttribute("result", result_flag);

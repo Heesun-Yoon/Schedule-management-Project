@@ -1,9 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>	
+
+
 <!DOCTYPE html>
 <html>
 <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <meta charset="UTF-8">
 <title>Login</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +19,7 @@
 
    <!-- 전체 레이아웃 시작 -->
     <div id="wrap">
-        <input type="hidden" id=“hid_result” value =“&{result_flag}”>
+        <input type="hidden" id="hid_result" value ="${result}">
         <div id="container">
             <div id="login_box">
                 <div id="left_box">
@@ -46,17 +49,21 @@
     
     <!-- 전체 레이아웃 끝 -->
     </div>
-    
-    <!-- js -->
-    <script>
-	    /* <c:if test="${result_flag eq flase}" >
-	    	alert('로그인 정보가 일치하지 않습니다.');
-	    </c:if> */
-	    
-		    if($('#hid_result').val() == "false") {
-		    	alert('로그인 실패');
-		    } 
-    </script>
 
 </body>
+
+
+    <!-- js -->
+    <script>    
+
+		    if($('#hid_result').val() == "false") {
+		    	alert('로그인 실패');
+		    }
+		    /* else {
+		    	alert(('#hid_result').val());
+		    } */
+
+
+    </script>
+
 </html>
