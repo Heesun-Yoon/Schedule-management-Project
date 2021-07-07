@@ -150,7 +150,7 @@
                             <div id="todo_content1" class="sc_box_content">Additional explanation.</div>
                             <div id="todo_date1" class="sc_box_date">2021.01.01 - 2021.02.03 (30days)</div>
                         </div>
-                        <div id="todo_2" class="sc_box">  
+                        <!-- <div id="todo_2" class="sc_box">  
                             <span id="todo_priority2" class="sc_box_priority">
                                 <img src="resources\images\up.png" id="img17" class="priority_img">
                             </span>
@@ -158,7 +158,7 @@
                             <div id="todo_tag2" class="sc_box_tag">Mobile</div>
                             <div id="todo_content2" class="sc_box_content">Additional explanation.</div>
                             <div id="todo_date2" class="sc_box_date">2021.01.01 - 2021.02.03 (30days)</div>
-                        </div>
+                        </div> -->
                     </div>
 
                     <div id="doing_section" class="sc_section">

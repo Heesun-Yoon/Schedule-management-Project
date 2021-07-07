@@ -53,6 +53,8 @@ CREATE TABLE TBL_SCHEDULE (
 );
 
 
+
+
 /*파일(완료)*/
 CREATE TABLE TBL_FILE (
   SEQ NUMBER PRIMARY KEY,					            /*번호*/	
@@ -109,3 +111,8 @@ select seq,name,id,pw,address,delflag from tbl_member where id='HeeSun' and pw=1
 
 select count(*) as cnt from tbl_member where id='HeeSun' and pw=123;
 
+insert into TBL_SCHEDULE (seq, member_seq,title, content, start_time, end_time, important, tag, cost, state, regdate, delflag) values (seq_schedule.nextVal, 1, 'Programming Study', 'Java, Oracle, JavaScript Study', '2021-06-22','2021-07-26',4,'study,coding',0,'doing','2021-07-08',0);
+
+select * from tbl_schedule;
+
+commit;
