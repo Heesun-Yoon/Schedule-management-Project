@@ -17,7 +17,7 @@
 
 </head>
 <body>
-     <!-- 전체 레이아웃 시작 -->
+     <!-- 전체 레이아웃 시작 --> 
     <div id="wrap">
     <input type="hidden" id=“hid_result” value =“&{result_flag}”>
         <!-- 상단메뉴 시작 -->
