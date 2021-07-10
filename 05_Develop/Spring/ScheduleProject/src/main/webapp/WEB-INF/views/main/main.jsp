@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +20,7 @@
 <body>
      <!-- 전체 레이아웃 시작 --> 
     <div id="wrap">
-    <input type="hidden" id=“hid_result” value =“&{result_flag}”>
+    <input type="hidden" id="hid_result" value ="${result}">
         <!-- 상단메뉴 시작 -->
         <div id=top>
             <span id="top_icon1">
@@ -30,9 +31,6 @@
             </span>
             <span id="top_txt">
                 Schedule M.
-                <%-- <c:forEach items="${result}" var="dto">
-                	<div>${dto.name}</div>
-                </c:forEach> --%>
             </span>
             <span id="top_icon3">
                 <img src="resources\images\alram.png" id="img3" class="top_right_img">
@@ -93,9 +91,7 @@
                 <div id="schedule_title">
                 <!-- 스케줄 타이틀 끝 -->
                     <span id="sc_title">
-                        <!-- <span id="sc_title_img">  -->
-                            <img src="resources\images\bookmark.png" id="img11">
-                        <!-- </span> -->
+                        <img src="resources\images\bookmark.png" id="img11">
                         <span id="sc_title_txt">Daily Schedule</span>
                     </span>
                     <span id="sc_sub_title">
@@ -138,9 +134,9 @@
                 <!-- 스케줄 표 시작 -->
                 <div id="schedule">
                     <div id="todo_section" class="sc_section">
-                        <div id="todo_txt" class="sc_txt">To do (2)</div>
+                        <div id="todo_txt" class="sc_txt">To do (0)</div>
                         <div id="todo_add" class="sc_add">+ Add a Schedule</div>
-                        <div id="todo_1" class="sc_box">
+                        <!-- <div id="todo_1" class="sc_box">
                             <span id="todo_priority1" class="sc_box_priority">
                                 <img src="resources\images\minus.png" id="img16" class="priority_img">
                             </span>
@@ -149,7 +145,7 @@
                             <div id="todo_tag1_1" class="sc_box_tag">coding</div>
                             <div id="todo_content1" class="sc_box_content">Additional explanation.</div>
                             <div id="todo_date1" class="sc_box_date">2021.01.01 - 2021.02.03 (30days)</div>
-                        </div>
+                        </div> -->
                         <!-- <div id="todo_2" class="sc_box">  
                             <span id="todo_priority2" class="sc_box_priority">
                                 <img src="resources\images\up.png" id="img17" class="priority_img">
@@ -162,7 +158,7 @@
                     </div>
 
                     <div id="doing_section" class="sc_section">
-                        <div id="doing_txt" class="sc_txt">Doing (3)</div>
+                        <div id="doing_txt" class="sc_txt">Doing (1)</div>
                         <div id="doing_add" class="sc_add">+ Add a Schedule</div>
                         <div id="doing_1" class="sc_box">
                             <span id="doing_priority1" class="sc_box_priority">
@@ -173,7 +169,7 @@
                             <div id="doing1_content" class="sc_box_content">Additional explanation.</div>
                             <div id="doing1_date" class="sc_box_date">2021.01.01 - 2021.02.03 (30days)</div>
                         </div>
-                        <div id="doing_2" class="sc_box">
+                        <!-- <div id="doing_2" class="sc_box">
                             <span id="doing_priority2" class="sc_box_priority">
                                 <img src="resources\images\minus.png" id="img19" class="priority_img">
                             </span>
@@ -191,21 +187,22 @@
                             <div id="doing3_content" class="sc_box_content">Additional explanation.</div>
                             <div id="doing3_date" class="sc_box_date">2021.01.01 - 2021.02.03 (30days)</div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div id="done_section" class="sc_section">
-                        <div id="done_txt" class="sc_txt">Done (1)</div>
+                        <div id="done_txt" class="sc_txt">Done (0)</div>
                         <div id="done_add" class="sc_add">+ Add a Schedule</div>
-                        <div id="done_1" class="sc_box">
+                        <!-- <div id="done_1" class="sc_box">
                             <span id="done_priority1" class="sc_box_priority">
                                 <img src="resources\images\down.png" id="img21" class="priority_img">
                             </span>
                             <span id="done_title1" class="sc_box_title">List of UI features</span>
                             <div id="done_tag1" class="sc_box_tag">Mobile</div>
                             <div id="done1_content" class="sc_box_content">Additional explanation.</div>
-                            <div id="done1_date" class="sc_box_date">2021.01.01 - 2021.02.03 (30days)</div>
-                        </div>
-                    </div>
+                            <div id="done1_date" class="sc_box_date">2021.01.01 - 2021.02.03 (30days)</div> 
+                        </div> -->
+                    </div> 
+                 </div>
 
                 <!-- 스케줄 표 끝 -->
                 </div>
