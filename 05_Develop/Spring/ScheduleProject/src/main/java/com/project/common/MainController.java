@@ -50,19 +50,6 @@ public class MainController {
 		List<MemberDTO> result = dao.list(map);		
 		int result_cnt = dao.list_cnt(map);		
 
-		
-		
-
-//		System.out.println("result seq: "+ result.get(0).getSeq());
-//		System.out.println("result name: "+ result.get(0).getName());
-//		System.out.println("result id: "+ result.get(0).getId());
-//		System.out.println("result pw: "+ result.get(0).getPw());
-//		System.out.println("result address: "+ result.get(0).getAddress());
-//		System.out.println("result delflag: "+ result.get(0).getDelflag());
-//		System.out.println("result: "+ result.get(0).toString());
-		//result: com.project.common.MemberDTO@50834168
-		
-
 
 		request.setAttribute("result", result);
 
