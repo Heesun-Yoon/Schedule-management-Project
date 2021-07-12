@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mapper namespace="schedule">
+
+<!-- 제발 세미클론 쓰지마 -->
+
+<select id="scheduleList" resultType="sdto" parameterType="map">
+
+</select>

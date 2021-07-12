@@ -1,5 +1,8 @@
 package com.project.schedule;
 
+import java.util.HashMap;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +31,10 @@ public class ScheduleController {
 		
 		
 		//DB에서 게시글 정보 가져와서 JSP로 넘겨주기
+		
+		HashMap<String,String> map = new HashMap<String,String>();
+		
+		List<ScheduleDTO> scheduleResult = dao.scheduleList(map);
 		
 		return "/main/main";
 
