@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
 <mapper namespace="schedule">
 
-<!-- 제발 세미클론 쓰지마 -->
-
 <select id="scheduleList" resultType="sdto" parameterType="map">
-
+	select * from tbl_schedule where member_seq = 1
 </select>
+
+
+
+
+
+</mapper>
