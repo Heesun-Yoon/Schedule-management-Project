@@ -19,7 +19,7 @@ public class ScheduleController {
 	@Autowired
 	private IScheduleDAO dao;
 	
-	@RequestMapping(value="/main.do", method = {RequestMethod.POST, RequestMethod.GET})
+	@RequestMapping(value="/smain.do", method = {RequestMethod.POST, RequestMethod.GET})
 	public String schedule(HttpServletRequest request, HttpServletRequest response) {
 		
 		
