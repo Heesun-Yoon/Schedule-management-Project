@@ -25,6 +25,8 @@ public class LoginController {
 		session.setAttribute("id", dto.getSeq());
 		session.setAttribute("pw", dto.getPw());
 		
+		System.out.println("로그인 seq "+session.getAttribute("seq"));
+		
 
 		String result_flag = "start";
 		
@@ -36,7 +38,7 @@ public class LoginController {
 			return "/common/login";
 		}
 		
-		return "/common/login";
+		return "/common/main";
 	}
 
 }

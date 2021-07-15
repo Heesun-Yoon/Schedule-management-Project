@@ -164,10 +164,12 @@
                             <span id="doing_priority1" class="sc_box_priority">
                                 <img src="resources\images\down.png" id="img18" class="priority_img">
                             </span>
-                            <span id="doing_title1" class="sc_box_title">List of UI features</span>
-                            <div id="doing_tag1" class="sc_box_tag">Mobile</div>
-                            <div id="doing1_content" class="sc_box_content">Additional explanation.</div>
-                            <div id="doing1_date" class="sc_box_date">2021.01.01 - 2021.02.03 (30days)</div>
+                            <c:forEach items="${s_result}" var="dto">
+	                            <span id="doing_title1" class="sc_box_title">${dto.title}</span>
+	                            <div id="doing_tag1" class="sc_box_tag">${dto.tag}</div>
+	                            <div id="doing1_content" class="sc_box_content">${dto.content}</div>
+	                            <div id="doing1_date" class="sc_box_date">${dto.start_time}-${dto.end_time} ()</div>
+	                         </c:forEach>
                         </div>
                         <!-- <div id="doing_2" class="sc_box">
                             <span id="doing_priority2" class="sc_box_priority">

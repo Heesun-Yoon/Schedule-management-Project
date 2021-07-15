@@ -14,8 +14,8 @@ public class ScheduleDAO implements IScheduleDAO{
 	private SqlSessionTemplate template;
 
 	@Override
-	public List<ScheduleDTO> scheduleList(HashMap<String, String> map) {
-		return template.selectList("schedule.scheduleList",map);
+	public List<ScheduleDTO> scheduleList(HashMap<String, String> smap) {
+		return template.selectList("schedule.scheduleList",smap);
 	}
 
 }
