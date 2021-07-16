@@ -7,6 +7,6 @@ public interface IScheduleDAO {
 	
 	//DAO에서 작업 할 내용 
 	
-	List<ScheduleDTO> scheduleList(HashMap<String,String> map);
+	List<ScheduleDTO> scheduleList(HashMap<String,String> smap);
 
 }

@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.project.schedule.IScheduleDAO;
-import com.project.schedule.ScheduleDAO;
 import com.project.schedule.ScheduleDTO;
 
 import lombok.extern.log4j.Log4j;
@@ -24,6 +23,7 @@ public class MainController {
 	
 	@Autowired
 	private IMemberDAO dao;
+	@Autowired
 	private IScheduleDAO sdao;
 	
 	@RequestMapping(value="/main.do", method = {RequestMethod.POST, RequestMethod.GET})
@@ -70,13 +70,13 @@ public class MainController {
 		smap.put("id", id);
 		smap.put("pw", pw);
 		
-//		System.out.println("main smap id "+smap.zget("id"));
+//		System.out.println("main smap id "+smap.get("id"));
 //		System.out.println("main smap pw "+smap.get("pw"));
 		
 		List<MemberDTO> result = dao.list(map);		
 		int result_cnt = dao.list_cnt(map);		
 
-		List<ScheduleDTO> s_result = sdao.scheduleList(smap);
+		List<ScheduleDTO> s_result = sdao.scheduleList(map);
 //		List<ScheduleDTO> s_result = dao.scheduleList(smap);
 		System.out.println("main (s_result > content) "+s_result.get(0).getContent());
 		
