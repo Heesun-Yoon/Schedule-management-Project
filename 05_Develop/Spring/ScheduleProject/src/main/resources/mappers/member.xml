@@ -14,6 +14,10 @@
 	select count(*) as cnt from tbl_member where id=#{id} and pw=#{pw}
 </select>
 
+<select id="scheduleList" resultType="sdto" parameterType="map">
+	select * from tbl_schedule where seq = (select seq from tbl_member where id=#{id} and pw=#{pw})
+</select>
+
 
 
 

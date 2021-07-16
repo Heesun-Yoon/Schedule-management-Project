@@ -48,12 +48,12 @@ public class ScheduleController {
 		map.put("seq",(Integer) session_seq);
 		
 		
-		List<ScheduleDTO> scheduleResult = dao.scheduleList(map);
-		
-		System.out.println(scheduleResult.get(0).getTitle());
-		System.out.println(scheduleResult.get(0).getContent());
-		
-		request.setAttribute("s_result", scheduleResult);
+//		List<ScheduleDTO> scheduleResult = dao.scheduleList(map);
+//		
+//		System.out.println(scheduleResult.get(0).getTitle());
+//		System.out.println(scheduleResult.get(0).getContent());
+//		
+//		request.setAttribute("s_result", scheduleResult);
 		
 		return "/main/main";
 

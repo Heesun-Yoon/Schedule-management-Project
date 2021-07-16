@@ -15,6 +15,9 @@ public class ScheduleDAO implements IScheduleDAO{
 
 	@Override
 	public List<ScheduleDTO> scheduleList(HashMap<String, String> smap) {
+		System.out.println("DAO map id "+smap.get("id"));
+		System.out.println("DAO map pw "+smap.get("pw"));
+		System.out.println("dao : "+smap.toString());
 		return template.selectList("schedule.scheduleList",smap);
 	}
 

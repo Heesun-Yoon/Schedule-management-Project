@@ -55,6 +55,10 @@ CREATE TABLE TBL_SCHEDULE (
 -- seq 1번 회원이 등록한 게시물 
 select * from tbl_schedule where member_seq = 1;
 
+select * from tbl_schedule where seq = (select seq from tbl_member where id='HeeSun' and pw='1234');
+
+select * from tbl_member where id='HeeSun' and pw='1234';
+
 
 
 
