@@ -122,4 +122,6 @@ insert into TBL_SCHEDULE (seq, member_seq,title, content, start_time, end_time, 
 
 select * from tbl_schedule;
 
-commit;
+--commit;
+select * from tbl_schedule where seq = (select seq from tbl_member where id='HeeSun' and pw='1234');
+select * from tbl_schedule where seq = (select seq from tbl_member where id='HeeSun' and pw='1234');
