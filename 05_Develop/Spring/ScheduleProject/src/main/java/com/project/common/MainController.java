@@ -78,7 +78,7 @@ public class MainController {
 
 		List<ScheduleDTO> s_result = sdao.scheduleList(map);
 //		List<ScheduleDTO> s_result = dao.scheduleList(smap);
-		System.out.println("main (s_result > content) "+s_result.get(0).getContent());
+//		System.out.println("main (s_result > content) "+s_result.get(0).getContent());
 		
 
 		System.out.println(s_result.get(0).getTitle());
