@@ -80,9 +80,10 @@ public class MainController {
 //		List<ScheduleDTO> s_result = dao.scheduleList(smap);
 //		System.out.println("main (s_result > content) "+s_result.get(0).getContent());
 		
-
-		System.out.println(s_result.get(0).getTitle());
-		System.out.println(s_result.get(0).getContent());
+		//tag 를 ","로 분리하여 동적 태그 추가해야 함,,
+		
+		System.out.println(s_result.get(0).getTag());
+//		System.out.println(s_result.get(0).getContent());
 
 		request.setAttribute("result", result);
 
