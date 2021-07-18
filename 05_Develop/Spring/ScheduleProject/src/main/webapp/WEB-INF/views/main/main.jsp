@@ -224,6 +224,14 @@
     	alert('로그인 실패');
     } 
     
+    /* 페이지 로드시 바로 적용 */
+    $(document).ready(function(){
+    	var tag = "<div id=""doing_tag1"" class=""sc_box_tag"">${dto.tag}</div>";
+    	$('#doing_title1').append(tag);
+    });
+    
+    
+    
     </script>
 
 </html>
