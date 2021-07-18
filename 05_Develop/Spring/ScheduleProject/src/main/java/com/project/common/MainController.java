@@ -83,6 +83,13 @@ public class MainController {
 		//tag 를 ","로 분리하여 동적 태그 추가해야 함,,
 		
 		System.out.println(s_result.get(0).getTag());
+		
+		//tag 컬럼값을 ","으로 나눔
+//		String[] tag_list = {};
+		String[] tag_list = s_result.get(0).getTag().split(",");
+		System.out.println("main split complete : "+tag_list[0]);
+		System.out.println("main split complete : "+tag_list[1]);
+		
 //		System.out.println(s_result.get(0).getContent());
 
 		request.setAttribute("result", result);
