@@ -166,7 +166,7 @@
                             </span>
                             <c:forEach items="${s_result}" var="dto">
 	                            <span id="doing_title1" class="sc_box_title">${dto.title}</span>
-	                            <div id="test_div">
+	                            <div id="tag_div">
 	                            <c:forEach items="${tag_list}" var="tag_list">
 	                            	<%-- <div id="doing_tag1" class="sc_box_tag">${tag_list}</div> --%>
 	                            	<span class="sc_box_tag">${tag_list}</span>

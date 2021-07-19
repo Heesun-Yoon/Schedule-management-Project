@@ -445,9 +445,9 @@
         .sc_box_tag{
             border-radius: 100px;
             background-color: #E7E7E7;
-            position: absolute;
-            top: 25%;
-            margin-left: 25px;
+            /* position: absolute;
+            top: 25%; */
+            margin-left: 10px;
             padding: 4px 10px 4px 10px;
         }
 
@@ -474,9 +474,11 @@
             color: #aaa;
         }
         
-        #test_div {
+        #tag_div {
             position: absolute;
             top: 25%;
+            width: 400px;
+            margin-left: 20px;
         }
 
 
