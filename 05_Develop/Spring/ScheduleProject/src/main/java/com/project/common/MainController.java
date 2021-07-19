@@ -1,5 +1,7 @@
 package com.project.common;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 //import java.util.List;
 import java.util.List;
@@ -86,9 +88,16 @@ public class MainController {
 		
 		//tag 컬럼값을 ","으로 나눔
 //		String[] tag_list = {};
-		String[] tag_list = s_result.get(0).getTag().split(",");
-		System.out.println("main split complete : "+tag_list[0]);
-		System.out.println("main split complete : "+tag_list[1]);
+//		String[] tag_list = s_result.get(0).getTag().split(",");
+//		ArrayList<String> tag_list = (ArrayList<String>) Arrays.asList(s_result.get(0).getTag().split(","));
+		ArrayList<String> tag_list = new ArrayList<String>(Arrays.asList(s_result.get(0).getTag().split(",")));
+//		tag_list = s_result.get(0).getTag().split(",");
+		
+//		System.out.println("main split complete : "+tag_list[0]);
+		System.out.println("main split complete toString: "+tag_list.toString());
+		System.out.println("main split complete 0 : "+tag_list.get(0));
+		System.out.println("main split complete 1 : "+tag_list.get(1));
+		
 		
 //		System.out.println(s_result.get(0).getContent());
 
@@ -97,6 +106,7 @@ public class MainController {
 		if(result_cnt > 0) {
 			//로그인 성공 > main page 이동
 			request.setAttribute("result", !result_flag);
+			request.setAttribute("tag_list", tag_list);
 			request.setAttribute("s_result", s_result);
 			return "/main/main";
 		} else {

@@ -473,6 +473,11 @@
             font-size: 13px;
             color: #aaa;
         }
+        
+        #test_div {
+            position: absolute;
+            top: 25%;
+        }
 
 
         

@@ -166,7 +166,12 @@
                             </span>
                             <c:forEach items="${s_result}" var="dto">
 	                            <span id="doing_title1" class="sc_box_title">${dto.title}</span>
-	                            <div id="doing_tag1" class="sc_box_tag">${dto.tag}</div>
+	                            <div id="test_div">
+	                            <c:forEach items="${tag_list}" var="tag_list">
+	                            	<%-- <div id="doing_tag1" class="sc_box_tag">${tag_list}</div> --%>
+	                            	<span class="sc_box_tag">${tag_list}</span>
+	                            </c:forEach>
+	                            </div>
 	                            <div id="doing1_content" class="sc_box_content">${dto.content}</div>
 	                            <div id="doing1_date" class="sc_box_date">${dto.start_time}-${dto.end_time} ()</div>
 	                         </c:forEach>
