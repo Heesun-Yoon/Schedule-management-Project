@@ -94,9 +94,9 @@ public class MainController {
 //		tag_list = s_result.get(0).getTag().split(",");
 		
 //		System.out.println("main split complete : "+tag_list[0]);
-		System.out.println("main split complete toString: "+tag_list.toString());
-		System.out.println("main split complete 0 : "+tag_list.get(0));
-		System.out.println("main split complete 1 : "+tag_list.get(1));
+//		System.out.println("main split complete toString: "+tag_list.toString());
+//		System.out.println("main split complete 0 : "+tag_list.get(0));
+//		System.out.println("main split complete 1 : "+tag_list.get(1));
 		
 		
 //		System.out.println(s_result.get(0).getContent());
