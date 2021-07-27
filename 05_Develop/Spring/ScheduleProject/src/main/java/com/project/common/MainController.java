@@ -84,7 +84,7 @@ public class MainController {
 		
 		//tag 를 ","로 분리하여 동적 태그 추가해야 함,,
 		
-		System.out.println(s_result.get(0).getTag());
+//		System.out.println(s_result.get(0).getTag());
 		
 		//tag 컬럼값을 ","으로 나눔
 //		String[] tag_list = {};

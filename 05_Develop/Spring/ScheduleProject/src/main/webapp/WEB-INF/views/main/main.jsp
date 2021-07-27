@@ -162,9 +162,28 @@
                         <div id="doing_add" class="sc_add">+ Add a Schedule</div>
                         <div id="doing_1" class="sc_box">
                             <span id="doing_priority1" class="sc_box_priority">
-                            <!-- 중요도에 따라 이미지 달라짐  -->
-                            <!-- 1 (down.png) , 2/3 (minus.png) , 4/5 (up.png) -->
-                                <img src="resources\images\down.png" id="img18" class="priority_img">
+                            <c:forEach items="${s_result}" var="dto">
+                            <c:choose>
+                            	<c:when test="${dto.important eq 1}">
+		                            <!-- 중요도에 따라 이미지 달라짐  -->
+		                            <!-- 1 (down.png) , 2/3 (minus.png) , 4/5 (up.png) -->
+	                                <img src="resources\images\down.png" id="img18" class="priority_img">
+	                       		</c:when>
+	                       		
+	                       		<c:when test="${dto.important eq 2 || dto.important eq 3}">
+		                            <!-- 중요도에 따라 이미지 달라짐  -->
+		                            <!-- 1 (down.png) , 2/3 (minus.png) , 4/5 (up.png) -->
+	                                <img src="resources\images\minus.png" id="img18" class="priority_img">
+	                       		</c:when>
+	                       		
+	                       		<c:when test="${dto.important eq 4 || dto.important eq 5}">
+		                            <!-- 중요도에 따라 이미지 달라짐  -->
+		                            <!-- 1 (down.png) , 2/3 (minus.png) , 4/5 (up.png) -->
+	                                <img src="resources\images\up.png" id="img18" class="priority_img">
+	                       		</c:when>
+	                       		
+	                        </c:choose>
+	                        </c:forEach>
                             </span>
                             <c:forEach items="${s_result}" var="dto">
 	                            <span id="doing_title1" class="sc_box_title">${dto.title}</span>
