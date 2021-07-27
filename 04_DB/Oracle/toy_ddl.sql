@@ -125,3 +125,9 @@ select * from tbl_schedule;
 --commit;
 select * from tbl_schedule where seq = (select seq from tbl_member where id='HeeSun' and pw='1234');
 select * from tbl_schedule where seq = (select seq from tbl_member where id='HeeSun' and pw='1234');
+
+-- 21.07.27 수정
+update tbl_schedule set start_time = '2021.06.22' where member_seq = 1;
+update tbl_schedule set end_time = '2021.09.26' where member_seq = 1;
+
+select * from tbl_schedule;

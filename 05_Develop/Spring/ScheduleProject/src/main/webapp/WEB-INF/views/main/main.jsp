@@ -162,6 +162,8 @@
                         <div id="doing_add" class="sc_add">+ Add a Schedule</div>
                         <div id="doing_1" class="sc_box">
                             <span id="doing_priority1" class="sc_box_priority">
+                            <!-- 중요도에 따라 이미지 달라짐  -->
+                            <!-- 1 (down.png) , 2/3 (minus.png) , 4/5 (up.png) -->
                                 <img src="resources\images\down.png" id="img18" class="priority_img">
                             </span>
                             <c:forEach items="${s_result}" var="dto">
@@ -173,7 +175,7 @@
 	                            </c:forEach>
 	                            </div>
 	                            <div id="doing1_content" class="sc_box_content">${dto.content}</div>
-	                            <div id="doing1_date" class="sc_box_date">${dto.start_time}-${dto.end_time} ()</div>
+	                            <div id="doing1_date" class="sc_box_date">${dto.start_time}-${dto.end_time}</div>
 	                         </c:forEach>
                         </div>
                         <!-- <div id="doing_2" class="sc_box">
