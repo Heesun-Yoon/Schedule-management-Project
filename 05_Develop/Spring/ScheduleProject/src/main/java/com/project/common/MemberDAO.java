@@ -25,10 +25,10 @@ public class MemberDAO implements IMemberDAO{
 		return template.selectOne("member.loginCheck_cnt",map);
 	}
 
-	@Override
-	public List<ScheduleDTO> scheduleList(HashMap<String, String> smap) {
-		return template.selectList("schedule.scheduleList",smap);
-	}
+//	@Override
+//	public List<ScheduleDTO> scheduleList(HashMap<String, String> smap) {
+//		return template.selectList("schedule.scheduleList",smap);
+//	}
 
 
 

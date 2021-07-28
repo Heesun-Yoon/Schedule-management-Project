@@ -11,7 +11,7 @@ public interface IMemberDAO {
 	
 	List<MemberDTO> list(HashMap<String, String> map);
 	int list_cnt(HashMap<String, String> map);
-	List<ScheduleDTO> scheduleList(HashMap<String, String> smap);
+//	List<ScheduleDTO> scheduleList(HashMap<String, String> smap);
 	
 
 }

@@ -194,7 +194,7 @@
 	                            </c:forEach>
 	                            </div>
 	                            <div id="doing1_content" class="sc_box_content">${dto.content}</div>
-	                            <div id="doing1_date" class="sc_box_date">${dto.start_time}-${dto.end_time}</div>
+	                            <div id="doing1_date" class="sc_box_date">${dto.start_time} - ${dto.end_time}</div>
 	                         </c:forEach>
                         </div>
                         <!-- <div id="doing_2" class="sc_box">

@@ -116,7 +116,7 @@ insert into TBL_MEMBER (seq, name, id, pw, address, delflag) values (SEQ_MEMBER.
 select * from tbl_member;
 select seq,name,id,pw,address,delflag from tbl_member where id='HeeSun' and pw=1234;
 
-select count(*) as cnt from tbl_member where id='HeeSun' and pw=123;
+select count(*) as cnt from tbl_member where id='HeeSun' and pw=1234;
 
 insert into TBL_SCHEDULE (seq, member_seq,title, content, start_time, end_time, important, tag, cost, state, regdate, delflag) values (seq_schedule.nextVal, 1, 'Programming Study', 'Java, Oracle, JavaScript Study', '2021-06-22','2021-07-26',4,'study,coding',0,'doing','2021-07-08',0);
 
