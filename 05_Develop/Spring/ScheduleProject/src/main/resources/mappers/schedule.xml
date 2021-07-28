@@ -9,11 +9,11 @@
 	select * from tbl_schedule where seq = (select seq from tbl_member where id=#{id} and pw=#{pw})
 </select>
 
-<select id="scheduleList_cnt" resultType="sdto" parameterType="int">
+<select id="scheduleList_cnt" resultType="scdto" parameterType="map">
 select
-    (select count(*) from tbl_schedule where member_seq = #{member_seq} and start_time > sysdate) as todo_cnt , 
-    (select count(*) from tbl_schedule where member_seq = #{member_seq} and start_time < sysdate and end_time > sysdate) as doing_cnt , 
-    (select count(*) from tbl_schedule where member_seq = #{member_seq} and end_time < sysdate) as doen_cnt  
+    (select count(*) from tbl_schedule where member_seq = #{member_seq} and start_time <![CDATA[>sysdate]]>) as todo_cnt , 
+    (select count(*) from tbl_schedule where member_seq = #{member_seq} and start_time <![CDATA[<sysdate]]> and end_time <![CDATA[>sysdate]]>) as doing_cnt , 
+    (select count(*) from tbl_schedule where member_seq = #{member_seq} and end_time <![CDATA[<sysdate]]>) as done_cnt  
 from tbl_member where id=#{id} and pw=#{pw}
 </select> 
 

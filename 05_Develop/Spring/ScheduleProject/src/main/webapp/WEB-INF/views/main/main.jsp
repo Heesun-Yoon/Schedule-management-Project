@@ -134,7 +134,9 @@
                 <!-- 스케줄 표 시작 -->
                 <div id="schedule">
                     <div id="todo_section" class="sc_section">
-                        <div id="todo_txt" class="sc_txt">To do (0)</div>
+                    <c:forEach items="${sche_cnt}" var="sche_cnt">
+                        <div id="todo_txt" class="sc_txt">To do (${sche_cnt.todo_cnt})</div>
+                    </c:forEach>
                         <div id="todo_add" class="sc_add">+ Add a Schedule</div>
                         <!-- <div id="todo_1" class="sc_box">
                             <span id="todo_priority1" class="sc_box_priority">
@@ -158,7 +160,9 @@
                     </div>
 
                     <div id="doing_section" class="sc_section">
-                        <div id="doing_txt" class="sc_txt">Doing (1)</div>
+                    <c:forEach items="${sche_cnt}" var="sche_cnt">
+                        <div id="doing_txt" class="sc_txt">Doing (${sche_cnt.doing_cnt})</div>
+                    </c:forEach>
                         <div id="doing_add" class="sc_add">+ Add a Schedule</div>
                         <div id="doing_1" class="sc_box">
                             <span id="doing_priority1" class="sc_box_priority">
@@ -218,7 +222,9 @@
                     </div> -->
 
                     <div id="done_section" class="sc_section">
-                        <div id="done_txt" class="sc_txt">Done (0)</div>
+                    <c:forEach items="${sche_cnt}" var="sche_cnt">
+                        <div id="done_txt" class="sc_txt">Done (${sche_cnt.done_cnt})</div>
+                    </c:forEach>
                         <div id="done_add" class="sc_add">+ Add a Schedule</div>
                         <!-- <div id="done_1" class="sc_box">
                             <span id="done_priority1" class="sc_box_priority">

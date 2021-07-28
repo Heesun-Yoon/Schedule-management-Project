@@ -137,7 +137,7 @@ select * from tbl_schedule;
 select
     (select count(*) from tbl_schedule where member_seq = 1 and start_time > sysdate) as todo_cnt , 
     (select count(*) from tbl_schedule where member_seq = 1 and start_time < sysdate and end_time > sysdate) as doing_cnt , 
-    (select count(*) from tbl_schedule where member_seq = 1 and end_time < sysdate) as doen_cnt  
+    (select count(*) from tbl_schedule where member_seq = 1 and end_time < sysdate) as done_cnt  
 from tbl_member where id='HeeSun' and pw=1234;
 
 

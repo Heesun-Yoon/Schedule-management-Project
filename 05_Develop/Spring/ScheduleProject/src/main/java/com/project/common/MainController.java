@@ -65,7 +65,7 @@ public class MainController {
 				
 		HashMap<String,String> map = new HashMap<String,String>();
 		HashMap<String,String> smap = new HashMap<String,String>();
-		HashMap<String,Integer> cntmap = new HashMap<String,Integer>();
+		HashMap<String,String> cntmap = new HashMap<String,String>();
 		
 		map.put("id", id);
 		map.put("pw", pw);
@@ -73,6 +73,10 @@ public class MainController {
 //		smap.put("seq", session_seq+"");
 		smap.put("id", id);
 		smap.put("pw", pw);
+
+		cntmap.put("id", id);
+		cntmap.put("pw", pw);
+		
 		
 //		System.out.println("main smap id "+smap.get("id"));
 //		System.out.println("main smap pw "+smap.get("pw"));
@@ -104,13 +108,19 @@ public class MainController {
 		//To do, Doing, Done 게시물 갯수 
 		//scdto 사용 (ScheduleCountDTO.java)
 		//매개변수 (member_seq) = 로그인 seq 
-		System.out.println("메인임!! 로그인 seq "+session.getAttribute("seq"));
-		int cnt_memseq = (Integer)session.getAttribute("seq") + 1;
+//		System.out.println("메인임!! 로그인 seq "+session.getAttribute("seq"));
+		String cnt_memseq = (Integer)session.getAttribute("seq") + 1 + "";
 		
 		cntmap.put("member_seq", cnt_memseq);
 		
 		
 		List<ScheduleCountDTO> list_cnt = sdao.scheduleList_cnt(cntmap);
+		
+		System.out.println("메인에서 list_cnt "+ list_cnt.get(0).getTodo_cnt());
+		System.out.println("메인에서 list_cnt "+ list_cnt.get(0).getDoing_cnt());
+		System.out.println("메인에서 list_cnt "+ list_cnt.get(0).getDone_cnt());
+		
+		request.setAttribute("sche_cnt", list_cnt);
 		
 		
 //		System.out.println(s_result.get(0).getContent());

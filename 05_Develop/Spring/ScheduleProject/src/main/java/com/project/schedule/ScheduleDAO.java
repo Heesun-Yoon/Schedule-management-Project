@@ -21,4 +21,9 @@ public class ScheduleDAO implements IScheduleDAO{
 		return template.selectList("schedule.scheduleList",smap);
 	}
 
+	@Override
+	public List<ScheduleCountDTO> scheduleList_cnt(HashMap<String, String> cntmap) {
+		return template.selectList("schedule.scheduleList_cnt",cntmap);
+	}
+
 }
