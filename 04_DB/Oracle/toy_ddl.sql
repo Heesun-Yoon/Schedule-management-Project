@@ -131,3 +131,13 @@ update tbl_schedule set start_time = '2021.06.22' where member_seq = 1;
 update tbl_schedule set end_time = '2021.09.26' where member_seq = 1;
 
 select * from tbl_schedule;
+
+-- 21.07.28
+-- To do, Doing, Done 에 해당하는 게시물 개수 (서브쿼리 사용) 
+select
+    (select count(*) from tbl_schedule where member_seq = 1 and start_time > sysdate) as todo_cnt , 
+    (select count(*) from tbl_schedule where member_seq = 1 and start_time < sysdate and end_time > sysdate) as doing_cnt , 
+    (select count(*) from tbl_schedule where member_seq = 1 and end_time < sysdate) as doen_cnt  
+from tbl_member where id='HeeSun' and pw=1234;
+
+
