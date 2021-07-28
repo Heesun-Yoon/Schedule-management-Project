@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.project.schedule.IScheduleDAO;
+import com.project.schedule.ScheduleCountDTO;
 import com.project.schedule.ScheduleDTO;
 
 import lombok.extern.log4j.Log4j;
@@ -29,7 +30,7 @@ public class MainController {
 	private IScheduleDAO sdao;
 	
 	@RequestMapping(value="/main.do", method = {RequestMethod.POST, RequestMethod.GET})
-	public String mainPage (MemberDTO dto, HttpServletRequest request, HttpServletRequest response, String id, String pw) {
+	public String mainPage (MemberDTO dto, ScheduleCountDTO scdto, HttpServletRequest request, HttpServletRequest response, String id, String pw) {
 		
 		
 //		int session_seq = 0;
@@ -64,6 +65,7 @@ public class MainController {
 				
 		HashMap<String,String> map = new HashMap<String,String>();
 		HashMap<String,String> smap = new HashMap<String,String>();
+		HashMap<String,Integer> cntmap = new HashMap<String,Integer>();
 		
 		map.put("id", id);
 		map.put("pw", pw);
@@ -97,6 +99,18 @@ public class MainController {
 //		System.out.println("main split complete toString: "+tag_list.toString());
 //		System.out.println("main split complete 0 : "+tag_list.get(0));
 //		System.out.println("main split complete 1 : "+tag_list.get(1));
+		
+		
+		//To do, Doing, Done 게시물 갯수 
+		//scdto 사용 (ScheduleCountDTO.java)
+		//매개변수 (member_seq) = 로그인 seq 
+		System.out.println("메인임!! 로그인 seq "+session.getAttribute("seq"));
+		int cnt_memseq = (Integer)session.getAttribute("seq") + 1;
+		
+		cntmap.put("member_seq", cnt_memseq);
+		
+		
+		List<ScheduleCountDTO> list_cnt = sdao.scheduleList_cnt(cntmap);
 		
 		
 //		System.out.println(s_result.get(0).getContent());

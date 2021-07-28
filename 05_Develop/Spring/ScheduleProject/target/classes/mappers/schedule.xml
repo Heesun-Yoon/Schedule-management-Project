@@ -9,7 +9,13 @@
 	select * from tbl_schedule where seq = (select seq from tbl_member where id=#{id} and pw=#{pw})
 </select>
 
-
+<select id="scheduleList_cnt" resultType="sdto" parameterType="int">
+select
+    (select count(*) from tbl_schedule where member_seq = #{member_seq} and start_time > sysdate) as todo_cnt , 
+    (select count(*) from tbl_schedule where member_seq = #{member_seq} and start_time < sysdate and end_time > sysdate) as doing_cnt , 
+    (select count(*) from tbl_schedule where member_seq = #{member_seq} and end_time < sysdate) as doen_cnt  
+from tbl_member where id=#{id} and pw=#{pw}
+</select> 
 
 
 
