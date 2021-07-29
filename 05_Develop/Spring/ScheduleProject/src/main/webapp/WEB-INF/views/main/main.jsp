@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Prompt&display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" href="resources/css/main/main.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 </head>
 <body>
@@ -57,12 +58,12 @@
         <div id="container">
             <div id="left">
                 <!-- 좌측 메뉴 시작-->
-                <div id="left_menu">
+                <!-- <div id="left_menu">
                     <span id="left_m_icon">
                         <img src="resources\images\check.png" id="img8">
-                    </span>
+                    </span> -->
                 <!-- 좌측 메뉴 끝 -->
-                </div>
+                <!-- </div> -->
 
                 <!-- 좌측 메뉴 상세 시작 -->
                 <div id="left_detail">
@@ -193,7 +194,6 @@
 	                            <span id="doing_title1" class="sc_box_title">${dto.title}</span>
 	                            <div id="tag_div">
 	                            <c:forEach items="${tag_list}" var="tag_list">
-	                            	<%-- <div id="doing_tag1" class="sc_box_tag">${tag_list}</div> --%>
 	                            	<span class="sc_box_tag">${tag_list}</span>
 	                            </c:forEach>
 	                            </div>
@@ -243,6 +243,54 @@
             </div>
         <!-- 메뉴 끝 -->
         </div>
+        
+        
+         <!-- modal popup -->
+        <div class="container"> 
+            <div class="popup-wrap" id="popup"> 
+              <div class="popup">	
+                <div class="popup-head">	
+                    <span class="head-title">Add a Schedule</span>
+                </div>
+                <div class="popup-body">	
+                  <div class="body-content">
+                    <div class="body-titlebox">
+                      <span>Title</span><textarea placeholder="Please enter a title" ></textarea>
+                    </div>
+                    <div class="body-contentbox">
+                        <span>Content</span><textarea placeholder="Please enter a content" rows="10"></textarea>
+                    </div>
+                    <div class="body-contentbox">
+                        <span>Tag</span><textarea placeholder="Please separate them with ','" rows="2"></textarea>
+                    </div>
+                    <div class="body-datebox">
+                        <div>Date</div><textarea placeholder="Start-date" rows="2" cols="5"></textarea>
+                        <textarea placeholder="End-date" rows="2" cols="5"></textarea>
+                    </div>
+
+                    <div>Priority</div>
+                    <select name="Priority" style="width: 200px; height: 30px;">
+                        <option value="">Priority</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="popup-foot">
+                    <span class="pop-btn close" id="close">창 닫기</span>
+                  <!-- <span class="pop-btn confirm" id="confirm">등록</span> -->
+                  <input type="submit" value="등록" class="pop-btn confirm" id="confirm">
+                
+                </div>
+              </div>
+          </div>
+          </div>
+        
+        
+        
 
     <!-- 전체 레이아웃 끝 -->
     </div>
@@ -257,12 +305,30 @@
     } 
     
     /* 페이지 로드시 바로 적용 */
-    $(document).ready(function(){
-    	var tag = "<div id=""doing_tag1"" class=""sc_box_tag"">${dto.tag}</div>";
+    /* $(document).ready(function(){
+    	var tag = "<div id='doing_tag1' class='sc_box_tag'>${dto.tag}</div>";
     	$('#doing_title1').append(tag);
+    }); */
+    
+    
+    /* modal */
+    $(function(){
+        $("#confirm").click(function(){
+            modalClose(); //모달 닫기 함수 호출
+            
+        //컨펌 이벤트 처리
+        });
+        $(".sc_add").click(function(){        
+            $("#popup").css('display','flex').hide().fadeIn();
+            //팝업을 flex속성으로 바꿔준 후 hide()로 숨기고 다시 fadeIn()으로 효과
+        });
+        $("#close").click(function(){
+            modalClose(); //모달 닫기 함수 호출
+        });
+        function modalClose(){
+            $("#popup").fadeOut(); //페이드아웃 효과
+        }
     });
-    
-    
     
     </script>
 

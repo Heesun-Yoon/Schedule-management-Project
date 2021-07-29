@@ -116,9 +116,9 @@ public class MainController {
 		
 		List<ScheduleCountDTO> list_cnt = sdao.scheduleList_cnt(cntmap);
 		
-		System.out.println("메인에서 list_cnt "+ list_cnt.get(0).getTodo_cnt());
-		System.out.println("메인에서 list_cnt "+ list_cnt.get(0).getDoing_cnt());
-		System.out.println("메인에서 list_cnt "+ list_cnt.get(0).getDone_cnt());
+//		System.out.println("메인에서 list_cnt "+ list_cnt.get(0).getTodo_cnt());
+//		System.out.println("메인에서 list_cnt "+ list_cnt.get(0).getDoing_cnt());
+//		System.out.println("메인에서 list_cnt "+ list_cnt.get(0).getDone_cnt());
 		
 		request.setAttribute("sche_cnt", list_cnt);
 		
