@@ -246,6 +246,7 @@
         
         
          <!-- modal popup -->
+        <form method="GET" action='/main.do'>
         <div class="container"> 
             <div class="popup-wrap" id="popup"> 
               <div class="popup">	
@@ -269,7 +270,7 @@
                     </div>
 
                     <div>Priority</div>
-                    <select name="Priority" style="width: 200px; height: 30px;">
+                    <select name="Priority" style="width: 200px; height: 30px;" required>
                         <option value="">Priority</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -288,7 +289,7 @@
               </div>
           </div>
           </div>
-        
+        </form>
         
         
 

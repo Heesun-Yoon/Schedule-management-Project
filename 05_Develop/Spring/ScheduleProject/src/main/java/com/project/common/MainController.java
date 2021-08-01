@@ -35,7 +35,10 @@ public class MainController {
 		
 //		int session_seq = 0;
 		
+		//세션 생성 
 		HttpSession session = request.getSession();
+		
+		//
 		
 		//세션 유지시간 설정 (30분)
 		session.setMaxInactiveInterval(1800);
@@ -108,8 +111,9 @@ public class MainController {
 		//To do, Doing, Done 게시물 갯수 
 		//scdto 사용 (ScheduleCountDTO.java)
 		//매개변수 (member_seq) = 로그인 seq 
-//		System.out.println("메인임!! 로그인 seq "+session.getAttribute("seq"));
+		System.out.println("메인임!! 로그인 seq "+session.getAttribute("seq"));
 		String cnt_memseq = (Integer)session.getAttribute("seq") + 1 + "";
+		System.out.println("메인 cnt_memseq  "+cnt_memseq);
 		
 		cntmap.put("member_seq", cnt_memseq);
 		
