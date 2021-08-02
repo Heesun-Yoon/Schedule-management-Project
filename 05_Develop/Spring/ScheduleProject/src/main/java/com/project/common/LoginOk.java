@@ -1,6 +1,9 @@
 package com.project.common;
 
+import java.util.HashMap;
+
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +21,34 @@ public class LoginOk {
 		//login.jsp에서 loginok.jsp로 데이터 넘김 
 		//loginok.java에서 로그인 성공 유무 및 로그인 session 저장
 		//완료되면 main.jsp 이동
+		
+		//세션 생성 
+		HttpSession session = request.getSession();
+		
+		String userid = request.getParameter("id");
+		String userpw = request.getParameter("pw");
+		
+		System.out.println("loginok 페이지 "+userid);
+		System.out.println("loginok 페이지 "+userpw);
+		
+		if(userid != null){
+			session.setAttribute("userid",userid);
+			session.setAttribute("userpw",userpw);
+			System.out.println("loginok 페이지 id "+session.getAttribute("userid"));
+			System.out.println("loginok 페이지 pw "+session.getAttribute("userpw"));
+
+			HashMap<String,String> map = new HashMap<String,String>();
+
+			map.put("id", userid);
+			map.put("pw", userpw);
+			
+			request.setAttribute("login_map", map);
+			
+			
+			return "/common/main";
+		}
+
+		
 		return "/common/main";
 		
 	}

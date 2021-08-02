@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <div id="right_box">
-                    <form name="login_form" action="/common/main.do" method="POST">
+                    <form name="login_form" action="/common/loginok.do" method="POST">
 	                    <div id="id_input_box">
 	                        ID<input name="id" id="id_input" type="text" placeholder="Please enter your id" size="25px">
 	                    </div>
