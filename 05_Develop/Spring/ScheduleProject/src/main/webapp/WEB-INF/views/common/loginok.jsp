@@ -9,6 +9,18 @@
 </head>
 <body>
 
+<!-- 
+
+Redirect 
+	- URL을 지시된 주소로 바꾸고 그 주소로 이동
+	
+Forward 
+	- 최초 호출한 URL만 표시, 이동한 페이지의 URL 볼 수 없음
+	
+
+
+ -->
+
 	<%
 	
 	String userid = request.getParameter("id");
