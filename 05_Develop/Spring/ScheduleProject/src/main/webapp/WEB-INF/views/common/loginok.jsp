@@ -36,7 +36,6 @@ Forward
 		System.out.println("loginok.jsp 페이지 pw "+session.getAttribute("userpw"));
 		
 
-
 	}
 
 	

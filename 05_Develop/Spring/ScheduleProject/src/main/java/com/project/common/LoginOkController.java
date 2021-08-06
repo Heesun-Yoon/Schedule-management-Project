@@ -13,7 +13,7 @@ import lombok.extern.log4j.Log4j;
 
 @Controller
 @Log4j
-public class LoginOk {
+public class LoginOkController {
 	
 	@RequestMapping(value="/loginok.do",  method = {RequestMethod.POST, RequestMethod.GET})
 	public String LoginCheck(HttpServletRequest request, HttpServletRequest response) {
@@ -31,7 +31,7 @@ public class LoginOk {
 		System.out.println("loginok 페이지 "+userid);
 		System.out.println("loginok 페이지 "+userpw);
 		
-		if(userid != null){
+		if(userid != null && userpw != null){
 			session.setAttribute("userid",userid);
 			session.setAttribute("userpw",userpw);
 			System.out.println("loginok 페이지 id "+session.getAttribute("userid"));
@@ -45,11 +45,11 @@ public class LoginOk {
 			request.setAttribute("login_map", map);
 			
 			
-			return "/common/main";
+			return "redirect:/main.do";
 		}
 
 		
-		return "/common/main";
+		return "redirect:/login.do";
 		
 	}
 

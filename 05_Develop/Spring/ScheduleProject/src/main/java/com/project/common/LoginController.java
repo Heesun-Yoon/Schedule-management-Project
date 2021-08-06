@@ -15,6 +15,7 @@ public class LoginController {
 	@RequestMapping(value="/login.do", method = {RequestMethod.POST, RequestMethod.GET} )
 	public String loginPage (MemberDTO dto, HttpServletRequest request, HttpServletRequest response, String id, String pw) {
 		
+		
 		//로그인 세션
 		HttpSession session = request.getSession();
 		
