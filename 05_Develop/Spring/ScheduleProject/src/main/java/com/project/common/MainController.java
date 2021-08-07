@@ -34,10 +34,17 @@ public class MainController {
 		
 		
 //		int session_seq = 0;
+
+		
 		
 		//세션 생성 
 		HttpSession session = request.getSession();
+
+		String userid =(String) session.getAttribute("userid");
+		String userpw =(String) session.getAttribute("userpw");
 		
+		System.out.println("Ok > main 데이터 : "+userid);
+		System.out.println("Ok > main 데이터 : "+userpw);
 		//
 		
 		//세션 유지시간 설정 (30분)
