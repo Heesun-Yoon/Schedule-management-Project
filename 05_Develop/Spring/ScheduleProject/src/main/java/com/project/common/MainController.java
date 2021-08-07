@@ -40,6 +40,7 @@ public class MainController {
 		//세션 생성 
 		HttpSession session = request.getSession();
 
+		//loginOk Controller에서 넘어온 데이터
 		String userid =(String) session.getAttribute("userid");
 		String userpw =(String) session.getAttribute("userpw");
 		
@@ -70,29 +71,29 @@ public class MainController {
 		
 		boolean result_flag = false;
 		
-		System.out.println("main "+id);
-		System.out.println("main "+pw);
+//		System.out.println("main "+id);
+//		System.out.println("main "+pw);
 				
 		HashMap<String,String> map = new HashMap<String,String>();
 		HashMap<String,String> smap = new HashMap<String,String>();
 		HashMap<String,String> cntmap = new HashMap<String,String>();
 		
-		map.put("id", id);
-		map.put("pw", pw);
+		map.put("id", userid);
+		map.put("pw", userpw);
 		
 //		smap.put("seq", session_seq+"");
-		smap.put("id", id);
-		smap.put("pw", pw);
+		smap.put("id", userid);
+		smap.put("pw", userpw);
 
-		cntmap.put("id", id);
-		cntmap.put("pw", pw);
+		cntmap.put("id", userid);
+		cntmap.put("pw", userpw);
 		
 		
 //		System.out.println("main smap id "+smap.get("id"));
 //		System.out.println("main smap pw "+smap.get("pw"));
 		
 		List<MemberDTO> result = dao.list(map);		
-		int result_cnt = dao.list_cnt(map);		
+//		int result_cnt = dao.list_cnt(map);		
 
 		List<ScheduleDTO> s_result = sdao.scheduleList(map);
 //		List<ScheduleDTO> s_result = dao.scheduleList(smap);
@@ -138,16 +139,22 @@ public class MainController {
 
 		request.setAttribute("result", result);
 
-		if(result_cnt > 0) {
-			//로그인 성공 > main page 이동
-			request.setAttribute("result", !result_flag);
-			request.setAttribute("tag_list", tag_list);
-			request.setAttribute("s_result", s_result);
-			return "/main/main";
-		} else {
-			request.setAttribute("result", result_flag);
-			return "/common/login";
-		} 
+//		if(result_cnt > 0) {
+//			//로그인 성공 > main page 이동
+//			request.setAttribute("result", !result_flag);
+//			request.setAttribute("tag_list", tag_list);
+//			request.setAttribute("s_result", s_result);
+//			return "/main/main";
+//		} else {
+//			request.setAttribute("result", result_flag);
+//			return "/common/login";
+//		} 
+		
+		
+		request.setAttribute("result", !result_flag);
+		request.setAttribute("tag_list", tag_list);
+		request.setAttribute("s_result", s_result);
+		return "/main/main";
 
 
 	}

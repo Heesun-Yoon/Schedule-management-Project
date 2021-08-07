@@ -22,24 +22,24 @@ public class LoginController {
 		//세션 유지시간 설정 (30분)
 		session.setMaxInactiveInterval(1800);
 		
-		session.setAttribute("seq", dto.getSeq());
-		session.setAttribute("id", dto.getSeq());
-		session.setAttribute("pw", dto.getPw());
+//		session.setAttribute("seq", dto.getSeq());
+//		session.setAttribute("id", dto.getSeq());
+//		session.setAttribute("pw", dto.getPw());
 		
-		System.out.println("로그인 seq "+session.getAttribute("seq"));
+//		System.out.println("로그인 seq "+session.getAttribute("seq"));
 		
 
-		String result_flag = "start";
+//		String result_flag = "start";
 		
 //		System.out.println("로그인"+id);
 //		System.out.println("로그인"+pw);
 		
-		if(id==null && pw==null) {
-			request.setAttribute("result", result_flag);
-			return "/common/login";
-		}
+//		if(id==null && pw==null) {
+//			request.setAttribute("result", result_flag);
+//			return "/common/login";
+//		}
 		
-		return "/common/main";
+		return "/common/login";
 	}
 
 }
