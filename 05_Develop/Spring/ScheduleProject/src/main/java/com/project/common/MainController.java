@@ -43,9 +43,16 @@ public class MainController {
 		//loginOk Controller에서 넘어온 데이터
 		String userid =(String) session.getAttribute("userid");
 		String userpw =(String) session.getAttribute("userpw");
+//		int seq = (int) session.getAttribute("seq");
+//		String seq = "1";
+//		String seq = session.getAttribute("seq")+"";
+		String seq = Integer.toString((int) session.getAttribute("seq"));
+		
 		
 		System.out.println("Ok > main 데이터 : "+userid);
 		System.out.println("Ok > main 데이터 : "+userpw);
+		System.out.println("Ok > main 데이터 : "+seq);
+//		System.out.println("메인 ::: "+request.getAttribute("login_map"));
 		//
 		
 		//세션 유지시간 설정 (30분)
@@ -92,7 +99,7 @@ public class MainController {
 //		System.out.println("main smap id "+smap.get("id"));
 //		System.out.println("main smap pw "+smap.get("pw"));
 		
-		List<MemberDTO> result = dao.list(map);		
+//		List<MemberDTO> result = dao.list(map);		
 //		int result_cnt = dao.list_cnt(map);		
 
 		List<ScheduleDTO> s_result = sdao.scheduleList(map);
@@ -120,10 +127,11 @@ public class MainController {
 		//scdto 사용 (ScheduleCountDTO.java)
 		//매개변수 (member_seq) = 로그인 seq 
 		System.out.println("메인임!! 로그인 seq "+session.getAttribute("seq"));
-		String cnt_memseq = (Integer)session.getAttribute("seq") + 1 + "";
-		System.out.println("메인 cnt_memseq  "+cnt_memseq);
+//		String cnt_memseq = (Integer)session.getAttribute("seq") + 1 + "";
+//		String cnt_memseq = session.getAttribute("seq");
+		System.out.println("메인 cnt_memseq  "+seq);
 		
-		cntmap.put("member_seq", cnt_memseq);
+		cntmap.put("member_seq", seq);
 		
 		
 		List<ScheduleCountDTO> list_cnt = sdao.scheduleList_cnt(cntmap);
@@ -137,7 +145,7 @@ public class MainController {
 		
 //		System.out.println(s_result.get(0).getContent());
 
-		request.setAttribute("result", result);
+//		request.setAttribute("result", result);
 
 //		if(result_cnt > 0) {
 //			//로그인 성공 > main page 이동

@@ -14,4 +14,6 @@ public interface IMemberDAO {
 //	List<ScheduleDTO> scheduleList(HashMap<String, String> smap);
 	
 
+	
+
 }

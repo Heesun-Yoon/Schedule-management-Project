@@ -21,7 +21,7 @@
 <body>
      <!-- 전체 레이아웃 시작 --> 
     <div id="wrap">
-    <input type="hidden" id="hid_result" value ="${result}">
+    <%-- <input type="hidden" id="hid_result" value ="${result}"> --%>
         <!-- 상단메뉴 시작 -->
         <div id=top>
             <span id="top_icon1">
