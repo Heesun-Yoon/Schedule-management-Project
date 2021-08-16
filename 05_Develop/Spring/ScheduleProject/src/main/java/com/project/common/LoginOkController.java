@@ -42,6 +42,8 @@ public class LoginOkController {
 			map.put("id", userid);
 			map.put("pw", userpw);
 			
+			//DB에서 로그인 정보 맞는지 확인.
+			
 			request.setAttribute("login_map", map);
 			
 			
