@@ -246,7 +246,7 @@
         
         
          <!-- modal popup -->
-        <form method="GET" action='/main.do'>
+        <form method="POST" action='/common/scheduleadd.do'>
         <div class="container"> 
             <div class="popup-wrap" id="popup"> 
               <div class="popup">	
@@ -256,21 +256,21 @@
                 <div class="popup-body">	
                   <div class="body-content">
                     <div class="body-titlebox">
-                      <span>Title</span><textarea placeholder="Please enter a title" ></textarea>
+                      <span>Title</span><textarea placeholder="Please enter a title" name="title"></textarea>
                     </div>
                     <div class="body-contentbox">
-                        <span>Content</span><textarea placeholder="Please enter a content" rows="10"></textarea>
+                        <span>Content</span><textarea placeholder="Please enter a content" rows="10" name="content"></textarea>
                     </div>
                     <div class="body-contentbox">
-                        <span>Tag</span><textarea placeholder="Please separate them with ','" rows="2"></textarea>
+                        <span>Tag</span><textarea placeholder="Please separate them with ','" rows="2" name="tag"></textarea>
                     </div>
                     <div class="body-datebox">
-                        <div>Date</div><textarea placeholder="Start-date" rows="2" cols="5"></textarea>
-                        <textarea placeholder="End-date" rows="2" cols="5"></textarea>
+                        <div>Date</div><textarea placeholder="Start-date" rows="2" cols="5" name="startdate"></textarea>
+                        <textarea placeholder="End-date" rows="2" cols="5" name="enddate"></textarea>
                     </div>
 
                     <div>Priority</div>
-                    <select name="Priority" style="width: 200px; height: 30px;" required>
+                    <select name="priority" style="width: 200px; height: 30px;" required>
                         <option value="">Priority</option>
                         <option value="1">1</option>
                         <option value="2">2</option>

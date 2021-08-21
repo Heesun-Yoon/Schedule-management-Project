@@ -1,5 +1,8 @@
 package com.project.schedule;
 
+import java.util.HashMap;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +23,44 @@ public class ScheduleAddController {
 	public String scheduleAdd (HttpServletRequest request, HttpServletRequest response, ScheduleDTO dto) {
 		
 		//main modal창에서 넘어온 데이터를 DB에 insert 
-		return null;
+		
+		System.out.println("추가 페이지");
+		
+
+		
+		
+		String title = request.getParameter("title");
+		String content = request.getParameter("content");
+		String tag = request.getParameter("tag");
+		String startdate = request.getParameter("startdate");
+		String enddate = request.getParameter("enddate");
+		String priority = request.getParameter("priority");
+		
+		System.out.println(title);
+		System.out.println(content);
+		System.out.println(tag);
+		System.out.println(startdate);
+		System.out.println(enddate);
+		System.out.println(priority);
+		
+		HashMap<String,String> saddmap = new HashMap<String,String>(); 
+		saddmap.put("title",title);
+		saddmap.put("content",content);
+		saddmap.put("tag",tag);
+		saddmap.put("startdate",startdate);
+		saddmap.put("enddate",enddate);
+		saddmap.put("priority",priority);
+		
+		//insert 작업 
+		List<ScheduleDTO> saddmap_ok = dao.scheduleAdd(saddmap);
+		
+		System.out.println("saddmap_ok"+saddmap_ok);
+		
+		
+		request.setAttribute("saddmap", saddmap);
+		
+		
+		return "/main/main";
 		
 	}
 
