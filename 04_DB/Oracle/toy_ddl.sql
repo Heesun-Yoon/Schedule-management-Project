@@ -141,3 +141,4 @@ select
 from tbl_member where id='HeeSun' and pw=1234;
 
 
+select seq,name,id,pw,address,delflag from tbl_member where id='HeeSun' and pw=1234;
