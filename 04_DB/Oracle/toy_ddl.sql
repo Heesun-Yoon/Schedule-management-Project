@@ -142,3 +142,5 @@ from tbl_member where id='HeeSun' and pw=1234;
 
 
 select seq,name,id,pw,address,delflag from tbl_member where id='HeeSun' and pw=1234;
+
+insert into TBL_SCHEDULE (seq, member_seq,title, content, start_time, end_time, important, tag, cost, state, regdate, delflag) values ()

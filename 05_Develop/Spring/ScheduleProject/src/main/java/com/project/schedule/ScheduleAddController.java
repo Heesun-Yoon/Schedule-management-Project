@@ -24,8 +24,7 @@ public class ScheduleAddController {
 		
 		//main modal창에서 넘어온 데이터를 DB에 insert 
 		
-		System.out.println("추가 페이지");  
-		
+		System.out.println("추가 페이지");  	
 
 		
 		
