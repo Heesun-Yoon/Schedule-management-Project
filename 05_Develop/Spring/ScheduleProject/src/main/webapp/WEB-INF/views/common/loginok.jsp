@@ -40,6 +40,12 @@ Forward
 
 	
 	%>
+	
+	
+	
+	<script>
+	/* ajax로 main에 데이터 전송 */
+	</script>
 
 </body>
 </html>

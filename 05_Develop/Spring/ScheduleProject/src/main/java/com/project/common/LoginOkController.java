@@ -65,11 +65,13 @@ public class LoginOkController {
 			request.setAttribute("login_map", map);
 			
 			
-			return "redirect:/main.do";
+//			return "redirect:/main.do";
+			return "/common/loginok";
 		}
 
 		
-		return "redirect:/login.do";
+//		return "redirect:/login.do";
+		return "/common/loginok";
 		
 	}
 
