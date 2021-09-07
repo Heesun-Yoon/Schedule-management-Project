@@ -16,8 +16,6 @@ Redirect
 	
 Forward 
 	- 최초 호출한 URL만 표시, 이동한 페이지의 URL 볼 수 없음
-	
-  
 
  -->
 
@@ -33,7 +31,7 @@ Forward
 		session.setAttribute("userid",userid);
 		session.setAttribute("userpw",userpw);
 		System.out.println("loginok.jsp 페이지 id "+session.getAttribute("userid"));
-		System.out.println("loginok.jsp 페이지 pw "+session.getAttribute("userpw"));
+		System.out.println("loginok.jsp 페이지 pw "+session.getAttribute("userpw")); 
 		
 
 	}
