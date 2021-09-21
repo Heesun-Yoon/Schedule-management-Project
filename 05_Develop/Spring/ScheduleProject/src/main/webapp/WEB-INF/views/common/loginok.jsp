@@ -43,6 +43,13 @@ Forward
 	
 	<script>
 	/* ajax로 main에 데이터 전송 */ 
+	//login_btn_in 버튼을 클릭 시 실행 
+	$("#login_btn_in").click(function(){
+		//json 형식으로 데이터 set
+		var params = {
+				
+		}
+	});
 	</script>
 
 </body>
