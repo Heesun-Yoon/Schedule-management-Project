@@ -64,7 +64,7 @@ Forward
 		},
 		error: function(XMLHttpRequest, textStatus, errorThrown){
 			alert("통신 실패")
-		}
+		} 
 		*/
 	});
 	</script>
