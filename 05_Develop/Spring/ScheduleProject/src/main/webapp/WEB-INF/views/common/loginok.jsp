@@ -56,15 +56,17 @@ Forward
 		
 		//ajax 통신
 		/*
-		type:"POST", 
-		url:"/test/ajax", 	//컨트롤러에서 대기중인 URL주소
-		data:params, 		//JSON 형식의 데이터
-		success:function(res){ //성공일 경우 
-			alert(res.code);
-		},
-		error: function(XMLHttpRequest, textStatus, errorThrown){
-			alert("통신 실패")
-		} 
+		$.ajax({
+			type:"POST", 
+			url:"/test/ajax", 	//컨트롤러에서 대기중인 URL주소
+			data:params, 		//JSON 형식의 데이터
+			success:function(res){ //성공일 경우 
+				alert(res.code);
+			},
+			error: function(XMLHttpRequest, textStatus, errorThrown){
+				alert("통신 실패")
+			} 
+		});
 		*/
 	});
 	</script>
