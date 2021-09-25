@@ -42,7 +42,10 @@ Forward
 	
 	
 	<script>
-	/* ajax로 main에 데이터 전송 */ 
+	/* ajax로 main에 데이터 전송 */
+	
+	//login.jsp 데이터 > loginok.controller로 전달 > loginok.jsp로 전달
+	
 	//login_btn_in 버튼을 클릭 시 실행 
 	$("#login_btn_in").click(function(){
 		//json 형식으로 데이터 set
