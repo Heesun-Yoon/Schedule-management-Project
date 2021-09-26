@@ -62,7 +62,7 @@ Forward
 		$.ajax({
 			type:"POST", 
 			url:"/test/ajax", 	//컨트롤러에서 대기중인 URL주소
-			data:params, 		//JSON 형식의 데이터
+			data:params, 		//JSON 형식의 데이터 (필수아님)
 			success:function(res){ //성공일 경우 
 				alert(res.code);
 			},
