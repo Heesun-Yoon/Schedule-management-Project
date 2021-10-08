@@ -49,13 +49,14 @@ Forward
 	//login_btn_in 버튼을 클릭 시 실행 
 	$("#login_btn_in").click(function(){
 		//json 형식으로 데이터 set
+		/*
 		var params = {
-			/*
+			
 			name: $("#name").val()
 			,sex: $("#sex").val()
 			,age: $("#age").val()
-			*/
 		}
+		*/
 		
 		//ajax 통신
 		/*
