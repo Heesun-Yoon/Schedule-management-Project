@@ -246,7 +246,7 @@
         
         
          <!-- modal popup -->
-        <form method="POST" action='/common/scheduleadd.do'>
+        <!-- <form method="POST" action='/common/scheduleadd.do'> -->
         <div class="container"> 
             <div class="popup-wrap" id="popup"> 
               <div class="popup">	
@@ -256,21 +256,21 @@
                 <div class="popup-body">	
                   <div class="body-content">
                     <div class="body-titlebox">
-                      <span>Title</span><textarea placeholder="Please enter a title" name="title"></textarea>
+                      <span>Title</span><textarea placeholder="Please enter a title" name="title" id="modal_title"></textarea>
                     </div>
                     <div class="body-contentbox">
-                        <span>Content</span><textarea placeholder="Please enter a content" rows="10" name="content"></textarea>
+                        <span>Content</span><textarea placeholder="Please enter a content" rows="10" name="content" id="modal_content"></textarea>
                     </div>
                     <div class="body-contentbox">
-                        <span>Tag</span><textarea placeholder="Please separate them with ','" rows="2" name="tag"></textarea>
+                        <span>Tag</span><textarea placeholder="Please separate them with ','" rows="2" name="tag" id="modal_tag"></textarea>
                     </div>
                     <div class="body-datebox">
-                        <div>Date</div><textarea placeholder="Start-date" rows="2" cols="5" name="startdate"></textarea>
-                        <textarea placeholder="End-date" rows="2" cols="5" name="enddate"></textarea>
+                        <div>Date</div><textarea placeholder="Start-date" rows="2" cols="5" name="startdate" id="modal_startdate"></textarea>
+                        <textarea placeholder="End-date" rows="2" cols="5" name="enddate" id="modal_enddate"></textarea>
                     </div>
 
                     <div>Priority</div>
-                    <select name="priority" style="width: 200px; height: 30px;" required>
+                    <select name="priority" style="width: 200px; height: 30px;" required id="modal_priority">
                         <option value="">Priority</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -289,7 +289,7 @@
               </div>
           </div>
           </div>
-        </form>
+        <!-- </form> -->
         
         
 
@@ -317,6 +317,45 @@
         $("#confirm").click(function(){
             modalClose(); //모달 닫기 함수 호출
             
+            
+            
+           
+        		//json 형식으로 데이터 set
+        		
+        		var params = {
+        			title: $("#modal_title").val()
+        			,content: $("#modal_content").val()
+        			,tag: $("#modal_tag").val()
+        			,startdate: $("#modal_startdate").val()
+        			,enddate: $("#modal_enddate").val()
+        			,priority: $("#modal_priority")
+        		}
+        		
+        		
+        		//ajax 통신
+        		
+        		$.ajax({
+        			type:"POST", 
+        			url:"/schedule/scheduleadd", 	//컨트롤러에서 대기중인 URL주소
+        			data:params, 		//JSON 형식의 데이터 
+        			success:function(res){ //성공일 경우 
+        				alert(res.code);
+        			},
+        			error: function(XMLHttpRequest, textStatus, errorThrown){
+        				alert("통신 실패")
+        			} 
+        		});
+        		
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
         //컨펌 이벤트 처리
         });
         $(".sc_add").click(function(){        
@@ -330,6 +369,14 @@
             $("#popup").fadeOut(); //페이드아웃 효과
         }
     });
+    
+    
+    
+
+    
+    
+    
+    
     
     </script>
 

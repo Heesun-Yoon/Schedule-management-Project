@@ -20,7 +20,7 @@ public class ScheduleAddController {
 	private IScheduleAddDAO dao;
 	
 	@RequestMapping(value="/scheduleadd.do", method = {RequestMethod.POST, RequestMethod.GET} )
-	public String scheduleAdd (HttpServletRequest request, HttpServletRequest response, ScheduleDTO dto) {
+	public void scheduleAdd (HttpServletRequest request, HttpServletRequest response, ScheduleDTO dto) {
 		
 		//main modal창에서 넘어온 데이터를 DB에 insert 
 		
@@ -51,15 +51,15 @@ public class ScheduleAddController {
 		saddmap.put("priority",priority);
 		
 		//insert 작업 
-		List<ScheduleDTO> saddmap_ok = dao.scheduleAdd(saddmap);
-		
-		System.out.println("saddmap_ok"+saddmap_ok);
+		//임시 주석
+//		List<ScheduleDTO> saddmap_ok = dao.scheduleAdd(saddmap);
+//		System.out.println("saddmap_ok"+saddmap_ok);
 		
 		
 		request.setAttribute("saddmap", saddmap);
 		
 		
-		return "/main/main";
+//		return "/main/main";
 		
 	}
 

@@ -65,13 +65,13 @@ public class LoginOkController {
 			request.setAttribute("login_map", map);
 			
 			
-//			return "redirect:/main.do";
-			return "/common/loginok";
+			return "redirect:/main.do";
+//			return "/common/loginok";
 		}
 
-		
-//		return "redirect:/login.do";
-		return "/common/loginok";
+		System.out.println("로그인값 비었음");
+		return "redirect:/login.do";
+//		return "/common/loginok";
 		
 	}
 
