@@ -317,9 +317,7 @@
         $("#confirm").click(function(){
             modalClose(); //모달 닫기 함수 호출
             
-            
-            
-           
+     
         		//json 형식으로 데이터 set
         		
         		var params = {
@@ -328,31 +326,28 @@
         			,tag: $("#modal_tag").val()
         			,startdate: $("#modal_startdate").val()
         			,enddate: $("#modal_enddate").val()
-        			,priority: $("#modal_priority")
+        			,priority: $("#modal_priority").val()
         		}
         		
+            
+        		alert($("#modal_priority").val());
         		
         		//ajax 통신
-        		
         		$.ajax({
         			type:"POST", 
-        			url:"/schedule/scheduleadd", 	//컨트롤러에서 대기중인 URL주소
+        			url:"schedule/scheduleadd.do", 	//컨트롤러에서 대기중인 URL주소
         			data:params, 		//JSON 형식의 데이터 
         			success:function(res){ //성공일 경우 
-        				alert(res.code);
+        				alert("성공");
         			},
         			error: function(XMLHttpRequest, textStatus, errorThrown){
-        				alert("통신 실패")
+        				alert("실패")
         			} 
         		});
         		
             
             
-            
-            
-            
-            
-            
+
             
             
             

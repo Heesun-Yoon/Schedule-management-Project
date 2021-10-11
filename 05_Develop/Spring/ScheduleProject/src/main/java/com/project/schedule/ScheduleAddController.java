@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.extern.log4j.Log4j;
 
@@ -19,7 +20,9 @@ public class ScheduleAddController {
 	@Autowired
 	private IScheduleAddDAO dao;
 	
-	@RequestMapping(value="/scheduleadd.do", method = {RequestMethod.POST, RequestMethod.GET} )
+	//ajax에서 응답을 받기 위한 어노테이션 (안적으면 ajax에서 success로 안넘어감)
+	@ResponseBody
+	@RequestMapping(value="/schedule/scheduleadd.do", method = {RequestMethod.POST, RequestMethod.GET} )
 	public void scheduleAdd (HttpServletRequest request, HttpServletRequest response, ScheduleDTO dto) {
 		
 		//main modal창에서 넘어온 데이터를 DB에 insert 
