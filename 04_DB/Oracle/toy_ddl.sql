@@ -64,6 +64,22 @@ select * from tbl_member where id='HeeSun' and pw='1234';
 
 
 
+-- 회원이 등록한 게시물 상태조건 추가
+select seq, member_seq, title, content, start_time, end_time, important, tag, cost, regdate, delflag,
+        CASE 
+        WHEN start_time > SYSDATE THEN 'TODO' 
+        WHEN start_time < SYSDATE AND end_time > SYSDATE THEN 'DOING'
+        WHEN end_time < SYSDATE THEN 'DONE'
+        END as state        
+from tbl_schedule where seq = (select seq from tbl_member where id='HeeSun' and pw='1234');
+
+
+
+
+
+
+
+
 
 /*파일(완료)*/
 CREATE TABLE TBL_FILE (
