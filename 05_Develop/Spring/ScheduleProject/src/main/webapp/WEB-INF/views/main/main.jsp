@@ -317,7 +317,6 @@
         $("#confirm").click(function(){
             modalClose(); //모달 닫기 함수 호출
             
-     
         		//json 형식으로 데이터 set
         		
         		var params = {
@@ -344,15 +343,12 @@
         				alert("실패")
         			} 
         		});
-        		
-            
-            
-
-            
-            
-            
+   
         //컨펌 이벤트 처리
         });
+        
+        
+        //modal 팝업처리
         $(".sc_add").click(function(){        
             $("#popup").css('display','flex').hide().fadeIn();
             //팝업을 flex속성으로 바꿔준 후 hide()로 숨기고 다시 fadeIn()으로 효과

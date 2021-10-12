@@ -52,6 +52,9 @@ CREATE TABLE TBL_SCHEDULE (
   DELFLAG NUMBER NOT NULL				                /*삭제*/
 );
 
+
+
+
 -- seq 1번 회원이 등록한 게시물 
 select * from tbl_schedule where member_seq = 1;
 

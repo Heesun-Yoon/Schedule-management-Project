@@ -103,6 +103,9 @@ public class MainController {
 //		int result_cnt = dao.list_cnt(map);		
 
 		List<ScheduleDTO> s_result = sdao.scheduleList(map);
+		
+		System.out.println("메인 state 값: "+s_result.get(0).getState());
+		
 //		List<ScheduleDTO> s_result = dao.scheduleList(smap);
 //		System.out.println("main (s_result > content) "+s_result.get(0).getContent());
 		
@@ -121,6 +124,12 @@ public class MainController {
 //		System.out.println("main split complete toString: "+tag_list.toString());
 //		System.out.println("main split complete 0 : "+tag_list.get(0));
 //		System.out.println("main split complete 1 : "+tag_list.get(1));
+		
+		
+		
+		//게시물 상태(todo,doing,done 구분)
+		
+		
 		
 		
 		//To do, Doing, Done 게시물 갯수 
