@@ -54,9 +54,9 @@ public class ScheduleAddController {
 		saddmap.put("priority",priority);
 		
 		//insert 작업 
-		//임시 주석
-//		List<ScheduleDTO> saddmap_ok = dao.scheduleAdd(saddmap);
-//		System.out.println("saddmap_ok"+saddmap_ok);
+		//임시 주석 (insert X)
+		List<ScheduleDTO> saddmap_ok = dao.scheduleAdd(saddmap);
+		System.out.println("saddmap_ok"+saddmap_ok);
 		
 		
 		request.setAttribute("saddmap", saddmap);
