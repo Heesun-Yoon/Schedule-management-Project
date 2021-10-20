@@ -26,8 +26,8 @@ from tbl_member where id=#{id} and pw=#{pw}
 </select> 
 
 <select id="scheduleAdd" parameterType="map">
-<!-- insert into TBL_SCHEDULE (seq, member_seq,title, content, start_time, end_time, important, tag, cost, state, regdate, delflag) 
-values (seq_schedule.nextVal,) -->
+insert into TBL_SCHEDULE (seq, member_seq,title, content, start_time, end_time, important, tag, cost, state, regdate, delflag) 
+values (seq_schedule.nextVal,)
 </select>
 
 
