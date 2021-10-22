@@ -163,3 +163,15 @@ from tbl_member where id='HeeSun' and pw=1234;
 select seq,name,id,pw,address,delflag from tbl_member where id='HeeSun' and pw=1234;
 
 insert into TBL_SCHEDULE (seq, member_seq,title, content, start_time, end_time, important, tag, cost, state, regdate, delflag) values ()
+
+
+-- 2021.10.22 수정 
+alter table TBL_SCHEDULE modify cost NUMBER default 0;
+alter table TBL_SCHEDULE modify regdate VARCHAR2(50) default sysdate;
+alter table TBL_SCHEDULE modify DELFLAG NUMBER default 0;
+select * from tbl_schedule;
+commit;
+
+
+
+
