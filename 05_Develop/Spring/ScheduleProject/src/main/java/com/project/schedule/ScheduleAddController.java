@@ -87,6 +87,9 @@ public class ScheduleAddController {
 		//최종 날짜형식 
 		String date = (year.concat(month)).concat(day);
 		System.out.println(date);	//20211022
+
+		//start, end date "." replace 작업
+		
 		
 		
 		
