@@ -5,6 +5,9 @@ import java.util.List;
 
 public interface IScheduleAddDAO {
 	
-	List<ScheduleDTO> scheduleAdd(HashMap<String,String> saddmap);
+//	List<ScheduleDTO> scheduleAdd(HashMap<String,String> saddmap);
+	int scheduleAdd(HashMap<String,String> saddmap);
+
+//	int scheduleAdd(int saddmap);
 
 }

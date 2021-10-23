@@ -21,6 +21,7 @@ public class ScheduleAddController {
 	
 	@Autowired
 	private IScheduleAddDAO dao;
+
 	
 	//ajax에서 응답을 받기 위한 어노테이션 (안적으면 ajax에서 success로 안넘어감)
 	@ResponseBody
@@ -40,11 +41,11 @@ public class ScheduleAddController {
 //		int seq = (int) session.getAttribute("seq");
 //		String seq = "1";
 //		String seq = session.getAttribute("seq")+"";
-		String seq = Integer.toString((int) session.getAttribute("seq"));
+		String member_seq = Integer.toString((int) session.getAttribute("seq"));
 		
 		System.out.println("추가"+userid);
 		System.out.println("추가"+userpw);
-		System.out.println("추가"+seq);
+		System.out.println("추가"+member_seq);
 
 		
 		
@@ -57,6 +58,8 @@ public class ScheduleAddController {
 		//cost 입력값 안받았음 ㅠㅠ 0으로 넣자 
 		String cost = "0";
 		String state = "";
+		String delflag = "0";
+		
 		
 		System.out.println(title);
 		System.out.println(content);
@@ -87,15 +90,40 @@ public class ScheduleAddController {
 		//최종 날짜형식 
 		String date = (year.concat(month)).concat(day);
 		System.out.println(date);	//20211022
+		
+		//regdate insert를 위한 날자형식
+		String regdate = year + "." + month + "." + day;
+		System.out.println("메인 regdate  "+regdate);
+		
 
 		//start, end date "." replace 작업
+		startdate = startdate.replace(".","");
+		enddate = enddate.replace(".", "");
 		
+		//숫자 비교 위해 String -> int 
+		int tmp_startdate = Integer.parseInt(startdate);
+		int tmp_enddate = Integer.parseInt(enddate);
+		int tmp_date = Integer.parseInt(date);
 		
+		System.out.println(tmp_startdate);
+		System.out.println(tmp_enddate);
 		
+		//state return 위한 날짜 비교
+		if(tmp_date < tmp_startdate) {
+			state = "todo";
+		} else if(tmp_date > tmp_startdate && tmp_date < tmp_enddate) {
+			state = "doing";
+		} else if(tmp_date > tmp_enddate) {
+			state = "done";
+		} else {
+			state = "error";
+		}
+		
+		System.out.println("메인 state::" + state);
 		
 		
 		HashMap<String,String> saddmap = new HashMap<String,String>(); 
-		saddmap.put("member_seq", seq);
+		saddmap.put("member_seq", member_seq);
 		saddmap.put("title",title);
 		saddmap.put("content",content);
 		saddmap.put("startdate",startdate);
@@ -103,17 +131,19 @@ public class ScheduleAddController {
 		saddmap.put("priority",priority);
 		saddmap.put("tag",tag);
 		saddmap.put("cost", cost);
+		saddmap.put("state", state);
+		saddmap.put("regdate", regdate);
+		saddmap.put("delflag", delflag);
 
 		
 
-
-		
-		
 		
 		//insert 작업 
 		//임시 주석 (insert X)
 //		List<ScheduleDTO> saddmap_ok = dao.scheduleAdd(saddmap);
-//		System.out.println("saddmap_ok"+saddmap_ok);
+		int saddmap_ok = dao.scheduleAdd(saddmap);
+		//정상 insert 완료되면 반환값 1
+		System.out.println("saddmap_ok"+saddmap_ok);
 		
 		
 		request.setAttribute("saddmap", saddmap);

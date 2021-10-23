@@ -173,5 +173,11 @@ select * from tbl_schedule;
 commit;
 
 
+insert into TBL_SCHEDULE (seq, member_seq,title, content, start_time, end_time, important, tag, cost, state, regdate, delflag) 
+values (seq_schedule.nextVal,1,'Javasciprt Study','Javasciprt Study,Programmers Question','20211022','20211106',4,'Javasciprt',0,'doing','2021.10.23',0)
+
+delete from TBL_SCHEDULE where title='Javasciprt Study';
+select * from tbl_schedule;
+
 
 

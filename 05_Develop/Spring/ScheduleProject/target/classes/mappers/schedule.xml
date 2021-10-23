@@ -25,10 +25,10 @@ select
 from tbl_member where id=#{id} and pw=#{pw}
 </select> 
 
-<select id="scheduleAdd" parameterType="map">
+<insert id="scheduleAdd" parameterType="java.util.HashMap">
 insert into TBL_SCHEDULE (seq, member_seq,title, content, start_time, end_time, important, tag, cost, state, regdate, delflag) 
-values (seq_schedule.nextVal,)
-</select>
+values (seq_schedule.nextVal,${member_seq},#{title},#{content},#{startdate},#{enddate},#{priority},#{tag},#{cost},#{state},#{regdate},#{delflag})
+</insert>
 
 
 
