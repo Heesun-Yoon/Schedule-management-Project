@@ -179,5 +179,7 @@ values (seq_schedule.nextVal,1,'Javasciprt Study','Javasciprt Study,Programmers 
 delete from TBL_SCHEDULE where title='Javasciprt Study';
 select * from tbl_schedule;
 
+commit;
+
 
 
