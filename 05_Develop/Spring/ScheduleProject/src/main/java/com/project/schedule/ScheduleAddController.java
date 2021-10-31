@@ -113,9 +113,9 @@ public class ScheduleAddController {
 			state = "todo";
 		} else if(tmp_date > tmp_startdate && tmp_date < tmp_enddate) {
 			state = "doing";
-		} else if(tmp_date > tmp_enddate) {
+		} else if(tmp_date > tmp_enddate || tmp_date == tmp_enddate) {
 			state = "done";
-		} else {
+		}  else {
 			state = "error";
 		}
 		
@@ -141,9 +141,9 @@ public class ScheduleAddController {
 		//insert 작업 
 		//임시 주석 (insert X)
 //		List<ScheduleDTO> saddmap_ok = dao.scheduleAdd(saddmap);
-		int saddmap_ok = dao.scheduleAdd(saddmap);
+//		int saddmap_ok = dao.scheduleAdd(saddmap);
 		//정상 insert 완료되면 반환값 1
-		System.out.println("saddmap_ok"+saddmap_ok);
+//		System.out.println("saddmap_ok"+saddmap_ok);
 		
 		
 		request.setAttribute("saddmap", saddmap);

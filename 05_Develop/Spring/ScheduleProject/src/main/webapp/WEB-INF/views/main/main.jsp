@@ -433,6 +433,16 @@
         				alert("실패")
         			} 
         		});
+        		
+        		
+        	//값 초기화
+        	$('#modal_title').val('');
+        	$('#modal_content').val('');
+        	$('#modal_tag').val('');
+        	$('#modal_startdate').val('');
+        	$('#modal_enddate').val('');
+        	$('#modal_priority').val("Priority").prop("selected", true);
+        	
    
         //컨펌 이벤트 처리
         });
@@ -445,6 +455,15 @@
         });
         $("#close").click(function(){
             modalClose(); //모달 닫기 함수 호출
+            
+        	//값 초기화
+        	$('#modal_title').val('');
+        	$('#modal_content').val('');
+        	$('#modal_tag').val('');
+        	$('#modal_startdate').val('');
+        	$('#modal_enddate').val('');
+        	$('#modal_priority').val("Priority").prop("selected", true);
+        	
         });
         function modalClose(){
             $("#popup").fadeOut(); //페이드아웃 효과
