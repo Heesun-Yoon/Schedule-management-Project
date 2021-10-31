@@ -74,6 +74,25 @@ select seq, member_seq, title, content, start_time, end_time, important, tag, co
         END as state        
 from tbl_schedule where member_seq = (select seq from tbl_member where id='HeeSun' and pw='1234');
 
+--수정 테스트 
+select seq, member_seq, title, content, start_time, end_time, important, tag, cost, regdate, delflag,
+        CASE 
+        WHEN to_date(start_time,'yyyy-mm-dd') > SYSDATE THEN 'TODO' 
+        WHEN to_date(start_time,'yyyy-mm-dd') < SYSDATE AND to_date(end_time,'yyyy-mm-dd') > SYSDATE THEN 'DOING'
+        WHEN to_date(end_time,'yyyy-mm-dd') < SYSDATE THEN 'DONE'
+        END as state        
+from tbl_schedule where member_seq = (select seq from tbl_member where id='HeeSun' and pw='1234');
+
+
+
+--수정 테스트 
+select seq, member_seq, title, content, start_time, end_time, important, tag, cost, regdate, delflag,
+        CASE 
+        WHEN start_time > to_char(SYSDATE,'yyyymmdd') THEN 'TODO' 
+        WHEN start_time < to_char(SYSDATE,'yyyymmdd') AND end_time > to_char(SYSDATE,'yyyymmdd') THEN 'DOING'
+        WHEN end_time < to_char(SYSDATE,'yyyymmdd') THEN 'DONE'
+        END as state        
+from tbl_schedule where member_seq = (select seq from tbl_member where id='HeeSun' and pw='1234');
 
 
 
@@ -188,6 +207,12 @@ select * from tbl_schedule;
 -- ORA-01861: literal does not match format string 에러로 혹시 '!' 때문에 그런건지 ㅠㅠ 
 -- > 아니였네 ㅠㅠ
 update TBL_SCHEDULE set content = 'Toy Project in progress' where title = 'Toy Project';
+
+--11월 31일 날짜 없음. 30일로 수정 
+update TBL_SCHEDULE set END_TIME = '20211129' where title = 'Toy Project';
+
+
+--delete from TBL_SCHEDULE where title='Toy Project';
 
 select * from TBL_SCHEDULE;
 
