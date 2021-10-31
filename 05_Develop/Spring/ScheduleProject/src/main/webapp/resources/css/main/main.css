@@ -387,6 +387,7 @@
         
         .sc_box {
             background-color: #F9F9F9;
+            border-left: 4px solid #75B5FB;
             border: 1px solid #aaa;
             border-radius: 0px 10px 10px 0px;
             border-left: 4px solid black;

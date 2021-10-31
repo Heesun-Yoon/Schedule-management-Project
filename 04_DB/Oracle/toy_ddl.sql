@@ -65,6 +65,7 @@ select * from tbl_member where id='HeeSun' and pw='1234';
 
 
 -- 회원이 등록한 게시물 상태조건 추가
+-- scheduleList
 select seq, member_seq, title, content, start_time, end_time, important, tag, cost, regdate, delflag,
         CASE 
         WHEN start_time > SYSDATE THEN 'TODO' 
