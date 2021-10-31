@@ -140,10 +140,12 @@ public class ScheduleAddController {
 		
 		//insert 작업 
 		//임시 주석 (insert X)
+		//사용 X
 //		List<ScheduleDTO> saddmap_ok = dao.scheduleAdd(saddmap);
-//		int saddmap_ok = dao.scheduleAdd(saddmap);
+		//사용 O
+		int saddmap_ok = dao.scheduleAdd(saddmap);
 		//정상 insert 완료되면 반환값 1
-//		System.out.println("saddmap_ok"+saddmap_ok);
+		System.out.println("saddmap_ok"+saddmap_ok);
 		
 		
 		request.setAttribute("saddmap", saddmap);

@@ -65,14 +65,14 @@ select * from tbl_member where id='HeeSun' and pw='1234';
 
 
 -- 회원이 등록한 게시물 상태조건 추가
--- scheduleList
+-- mapper > scheduleList
 select seq, member_seq, title, content, start_time, end_time, important, tag, cost, regdate, delflag,
         CASE 
         WHEN start_time > SYSDATE THEN 'TODO' 
         WHEN start_time < SYSDATE AND end_time > SYSDATE THEN 'DOING'
         WHEN end_time < SYSDATE THEN 'DONE'
         END as state        
-from tbl_schedule where seq = (select seq from tbl_member where id='HeeSun' and pw='1234');
+from tbl_schedule where member_seq = (select seq from tbl_member where id='HeeSun' and pw='1234');
 
 
 
@@ -180,7 +180,17 @@ values (seq_schedule.nextVal,1,'Javasciprt Study','Javasciprt Study,Programmers 
 delete from TBL_SCHEDULE where title='Javasciprt Study';
 select * from tbl_schedule;
 
-commit;
+--commit;
 
+
+
+--2021.10.31
+-- ORA-01861: literal does not match format string 에러로 혹시 '!' 때문에 그런건지 ㅠㅠ 
+-- > 아니였네 ㅠㅠ
+update TBL_SCHEDULE set content = 'Toy Project in progress' where title = 'Toy Project';
+
+select * from TBL_SCHEDULE;
+
+--commit;
 
 

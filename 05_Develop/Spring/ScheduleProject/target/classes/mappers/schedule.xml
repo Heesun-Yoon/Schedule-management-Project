@@ -7,14 +7,16 @@
 
 <select id="scheduleList" resultType="sdto" parameterType="map">
 <!-- 	select * from tbl_schedule where seq = (select seq from tbl_member where id=#{id} and pw=#{pw}) -->
+		<![CDATA[
 		select 
 		seq, member_seq, title, content, start_time, end_time, important, tag, cost, regdate, delflag,
         CASE 
-        WHEN start_time <![CDATA[>sysdate]]> THEN 'TODO' 
-        WHEN start_time <![CDATA[<sysdate]]> AND end_time <![CDATA[>sysdate]]> THEN 'DOING'
-        WHEN end_time <![CDATA[<sysdate]]> THEN 'DONE'
+        WHEN start_time > to_char(SYSDATE,'yyyymmdd') THEN 'TODO' 
+        WHEN start_time < to_char(SYSDATE,'yyyymmdd') AND end_time > to_char(SYSDATE,'yyyymmdd') THEN 'DOING'
+        WHEN end_time < to_char(SYSDATE,'yyyymmdd') THEN 'DONE'
         END as state 
 		from tbl_schedule where member_seq = (select seq from tbl_member where id=#{id} and pw=#{pw}) 
+		]]>
 </select>
 
 <select id="scheduleList_cnt" resultType="scdto" parameterType="map">
