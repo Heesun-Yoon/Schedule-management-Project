@@ -137,9 +137,27 @@
                     <textarea placeholder="검색어를 입력하세요" cols="30" rows="1"></textarea>
                     <div>검색</div>
                 </div>
-                <div id="filter2_click" class="filter_click"></div>
-                <div id="filter3_click" class="filter_click"></div>
+
+                <div id="filter2_click" class="filter_click">
+                    <textarea placeholder="priority" cols="10" rows="1"></textarea>
+                    <div>검색</div>
+                </div>
+
+                <div id="filter3_click" class="filter_click">
+                    <select>
+                        <option value="start">Start</option>
+                        <option value="end">End</option>
+                    </select>
+                    <textarea placeholder="Start or End date" cols="30" rows="1"></textarea>
+                    <div>검색</div>
+                </div>
+
                 <div id="filter4_click" class="filter_click"></div>
+
+
+
+
+
 
                 <!-- 스케줄 표 시작 -->
                 <div id="schedule">
@@ -495,7 +513,37 @@
     
     
 
-    
+    // filter 클릭 이벤트
+    var filter1 = $('#filter1');
+    var filter2 = $('#filter2');
+    var filter3 = $('#filter3');
+
+    filter1.click(function() {
+        $('#filter1_click').toggle();
+    });
+
+
+    $(document).ready(function() {
+    	$('#filter1_click').hide();
+    });
+
+    filter2.click(function() {
+        $('#filter2_click').toggle();
+    });
+
+
+    $(document).ready(function() {
+    	$('#filter2_click').hide();
+    });
+
+    filter3.click(function() {
+        $('#filter3_click').toggle();
+    });
+
+
+    $(document).ready(function() {
+    	$('#filter3_click').hide();
+    });
     
     
     
