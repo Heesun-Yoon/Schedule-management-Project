@@ -19,7 +19,7 @@
 
 </head>
 <body>
-     <!-- 전체 레이아웃 시작 --> 
+     <!-- 전체 레이아웃 시작 -->
     <div id="wrap">
     <%-- <input type="hidden" id="hid_result" value ="${result}"> --%>
         <!-- 상단메뉴 시작 -->
@@ -131,6 +131,15 @@
                     </span>
                 <!-- 필터 끝 -->
                 </div>
+
+                <!-- 필터 클릭시 나타나는 부분 -->
+                <div id="filter1_click" class="filter_click">
+                    <textarea placeholder="검색어를 입력하세요" cols="30" rows="1"></textarea>
+                    <div>검색</div>
+                </div>
+                <div id="filter2_click" class="filter_click"></div>
+                <div id="filter3_click" class="filter_click"></div>
+                <div id="filter4_click" class="filter_click"></div>
 
                 <!-- 스케줄 표 시작 -->
                 <div id="schedule">
