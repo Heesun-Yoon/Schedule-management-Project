@@ -61,6 +61,15 @@ public class ScheduleAddController {
 		String delflag = "0";
 		
 		
+		//시작,끝 날짜 입력받은 그대로 따로 저장하기 위한 변수 
+		// - string 가공 때문에 중간에 변형됨
+		String pre_startdate = "";
+		String pre_enddate = "";
+		
+		System.out.println("스케줄 add 시작: "+pre_startdate);	
+		System.out.println("스케줄 add 끝: "+pre_enddate);	
+		
+		
 		System.out.println(title);
 		System.out.println(content);
 		System.out.println(tag);
@@ -97,12 +106,12 @@ public class ScheduleAddController {
 		
 
 		//start, end date "." replace 작업
-		startdate = startdate.replace(".","");
-		enddate = enddate.replace(".", "");
+		pre_startdate = startdate.replace(".","");
+		pre_enddate = enddate.replace(".", "");
 		
 		//숫자 비교 위해 String -> int 
-		int tmp_startdate = Integer.parseInt(startdate);
-		int tmp_enddate = Integer.parseInt(enddate);
+		int tmp_startdate = Integer.parseInt(pre_startdate);
+		int tmp_enddate = Integer.parseInt(pre_enddate);
 		int tmp_date = Integer.parseInt(date);
 		
 		System.out.println(tmp_startdate);
@@ -120,6 +129,9 @@ public class ScheduleAddController {
 		}
 		
 		System.out.println("메인 state::" + state);
+		
+		System.out.println("add insert start: "+startdate);
+		System.out.println("add insert end: "+enddate);
 		
 		
 		HashMap<String,String> saddmap = new HashMap<String,String>(); 
