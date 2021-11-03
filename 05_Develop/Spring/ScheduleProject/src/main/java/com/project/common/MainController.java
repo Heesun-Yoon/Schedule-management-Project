@@ -104,6 +104,9 @@ public class MainController {
 
 		List<ScheduleDTO> s_result = sdao.scheduleList(map);
 		System.out.println("메인: "+s_result.size());
+		System.out.println("메인 태그: "+s_result.get(0).getTag());
+		System.out.println("메인 태그: "+s_result.get(1).getTag());
+		System.out.println("메인 태그: "+s_result.get(2).getTag());
 		
 		System.out.println("메인 state 값: "+s_result.get(0).getState());
 		

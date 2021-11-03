@@ -134,13 +134,13 @@
 
                 <!-- 필터 클릭시 나타나는 부분 -->
                 <div id="filter1_click" class="filter_click">
-                    <textarea placeholder="검색어를 입력하세요" cols="30" rows="1"></textarea>
-                    <div>검색</div>
+                    <textarea placeholder="검색어를 입력하세요" cols="30" rows="1" id="filter1_txt"></textarea>
+                    <div id="filter1_btn">검색</div>
                 </div>
 
                 <div id="filter2_click" class="filter_click">
                     <textarea placeholder="priority" cols="10" rows="1"></textarea>
-                    <div>검색</div>
+                    <div id="filter2_btn">검색</div>
                 </div>
 
                 <div id="filter3_click" class="filter_click">
@@ -149,7 +149,7 @@
                         <option value="end">End</option>
                     </select>
                     <textarea placeholder="Start or End date" cols="30" rows="1"></textarea>
-                    <div>검색</div>
+                    <div id="filter3_btn">검색</div>
                 </div>
 
                 <div id="filter4_click" class="filter_click"></div>
@@ -198,9 +198,10 @@
 	                            <c:forEach items="${s_result}" var="dto">
 		                            <span id="doing_title1" class="sc_box_title">${dto.title}</span>
 		                            <div id="tag_div">
-		                            <c:forEach items="${tag_list}" var="tag_list">
+		                            <%-- <c:forEach items="${tag_list}" var="tag_list">
 		                            	<span class="sc_box_tag">${tag_list}</span>
-		                            </c:forEach>
+		                            </c:forEach> --%>
+		                            <span class="sc_box_tag">${dto.tag}</span>
 		                            </div>
 		                            <div id="doing1_content" class="sc_box_content">${dto.content}</div>
 		                            <div id="doing1_date" class="sc_box_date">${dto.start_time} - ${dto.end_time}</div>
@@ -544,6 +545,39 @@
     $(document).ready(function() {
     	$('#filter3_click').hide();
     });
+    
+    
+    //filter1 누를 경우 데이터 가져오기
+    $("#filter1_btn").click (function() {
+    	alert($("#filter1_txt").val());
+    	
+    	//ajax
+    	var params = {
+    		filter1_txt: $("#filter1_txt").val()
+    	}
+    	
+    	$.ajax({
+    		type:"POST",
+    		url:"schedule/schedulefilter.do",
+    		data:params,
+    		success:function(res){
+    			alert('성공');
+    		},
+    		error: function(err){
+    			alert('실패');
+    		}
+    		
+    	})
+    	
+    	//ajax 함수처리가 끝나면 값 초기화 및 닫기 
+    	$("#filter1_txt").val('');
+    	$('#filter1_click').hide();
+    	
+    });
+    
+    
+    
+    
     
     
     
