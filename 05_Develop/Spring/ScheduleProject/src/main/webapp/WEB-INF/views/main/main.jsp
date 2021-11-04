@@ -32,6 +32,14 @@
             </span>
             <span id="top_txt">
                 Schedule M.
+                
+	                            <!-- user 계정 테스트 -->
+	                            <%-- <c:forEach items="${user_info}" var="info">
+	                            	<div>user_info 테스트 !!!</div>
+	                            	<div>${info.id}</div>
+	                            	<div>${info.pw}</div>
+	                            </c:forEach> --%>
+                
             </span>
             <span id="top_icon3">
                 <img src="resources\images\alram.png" id="img3" class="top_right_img">
@@ -153,7 +161,6 @@
                 </div>
 
                 <div id="filter4_click" class="filter_click"></div>
-
 
 
 

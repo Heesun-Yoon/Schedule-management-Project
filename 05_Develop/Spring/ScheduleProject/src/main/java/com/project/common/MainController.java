@@ -85,6 +85,7 @@ public class MainController {
 		HashMap<String,String> smap = new HashMap<String,String>();
 		HashMap<String,String> cntmap = new HashMap<String,String>();
 		
+		
 		map.put("id", userid);
 		map.put("pw", userpw);
 		
@@ -94,6 +95,11 @@ public class MainController {
 
 		cntmap.put("id", userid);
 		cntmap.put("pw", userpw);
+		
+		System.out.println("메인 필터위한 id " + map.size());
+		System.out.println("메인 필터위한 id " + map);
+		System.out.println("메인 필터위한 id " + map.get("id"));
+		System.out.println("메인 필터위한 id " + map.get("pw"));
 		
 		
 //		System.out.println("main smap id "+smap.get("id"));
@@ -170,11 +176,13 @@ public class MainController {
 //			request.setAttribute("result", result_flag);
 //			return "/common/login";
 //		} 
-		
+
 		
 		request.setAttribute("result", !result_flag);
 		request.setAttribute("tag_list", tag_list);
 		request.setAttribute("s_result", s_result);
+		//map (id,pw 담겨있음) 보내면 filter 진행시 select 필요 정보로 사용 가능
+		request.setAttribute("user_info", map);
 		return "/main/main";
 
 
