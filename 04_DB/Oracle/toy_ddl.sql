@@ -106,6 +106,15 @@ select seq, member_seq, title, content, start_time, end_time, important, tag, co
         END as state        
 from tbl_schedule where member_seq = (select seq from tbl_member where id='HeeSun' and pw='1234');
 
+--11.03 수정 테스트 
+select seq, member_seq, title, content, start_time, end_time, important, tag, cost, regdate, delflag,
+        CASE 
+        WHEN start_time > to_char(SYSDATE,'yyyy.mm.dd') THEN 'TODO' 
+        WHEN start_time < to_char(SYSDATE,'yyyy.mm.dd') AND end_time > to_char(SYSDATE,'yyyy.mm.dd') THEN 'DOING'
+        WHEN end_time < to_char(SYSDATE,'yyyy.mm.dd') THEN 'DONE'
+        END as state        
+from tbl_schedule where member_seq = (select seq from tbl_member where id='HeeSun' and pw='1234');
+
 
 
 

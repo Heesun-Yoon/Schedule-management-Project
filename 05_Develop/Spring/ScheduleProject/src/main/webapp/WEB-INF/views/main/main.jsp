@@ -196,12 +196,13 @@
 		                        </c:forEach>
 	                            </span>
 	                            <c:forEach items="${s_result}" var="dto">
-		                            <span id="doing_title1" class="sc_box_title">${dto.title}</span>
+		                            <span id="doing_title1" class="sc_box_title">${dto.title} 이건 나옴?</span>
 		                            <div id="tag_div">
+		                           	엥 왜안나옴?
 		                            <%-- <c:forEach items="${tag_list}" var="tag_list">
 		                            	<span class="sc_box_tag">${tag_list}</span>
 		                            </c:forEach> --%>
-		                            <span class="sc_box_tag">${dto.tag}</span>
+		                            <span class="sc_box_tag">${dto.tag}111</span>
 		                            </div>
 		                            <div id="doing1_content" class="sc_box_content">${dto.content}</div>
 		                            <div id="doing1_date" class="sc_box_date">${dto.start_time} - ${dto.end_time}</div>
@@ -428,7 +429,7 @@
     </div>
        
     
-</body>
+
 
     <script>
     
@@ -576,12 +577,13 @@
     });
     
     
-    
-    
-    
+
     
     
     
     </script>
+    
+    
+    </body>
 
 </html>
