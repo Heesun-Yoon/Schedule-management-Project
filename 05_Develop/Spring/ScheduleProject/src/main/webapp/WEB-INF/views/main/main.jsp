@@ -283,9 +283,10 @@
 	                            <%-- <c:forEach items="${s_result}" var="dto"> --%>
 		                            <span id="doing_title1" class="sc_box_title">${dto.title}</span>
 		                            <div id="tag_div">
-		                            <c:forEach items="${tag_list}" var="tag_list">
-		                            	<span class="sc_box_tag">${tag_list}</span>
-		                            </c:forEach>
+		                            <%-- <c:forEach items="${tag_list}" var="tag_list"> --%>
+		                            	<%-- <span class="sc_box_tag">${tag_list}</span> --%>
+		                            	<span class="sc_box_tag">${dto.tag}</span>
+		                            <%-- </c:forEach> --%>
 		                            </div>
 		                            <div id="doing1_content" class="sc_box_content">${dto.content}</div>
 		                            <div id="doing1_date" class="sc_box_date">${dto.start_time} - ${dto.end_time}</div>
@@ -312,6 +313,9 @@
                             <div id="doing3_date" class="sc_box_date">2021.01.01 - 2021.02.03 (30days)</div>
                         </div>
                     </div> -->
+                    
+                    
+                                        
 
                     <div id="done_section" class="sc_section">
                     <c:forEach items="${sche_cnt}" var="sche_cnt">
@@ -355,9 +359,10 @@
 	                            <%-- <c:forEach items="${s_result}" var="dto"> --%>
 		                            <span id="doing_title1" class="sc_box_title">${dto.title}</span>
 		                            <div id="tag_div">
-		                            <c:forEach items="${tag_list}" var="tag_list">
-		                            	<span class="sc_box_tag">${tag_list}</span>
-		                            </c:forEach>
+		                            <%-- <c:forEach items="${tag_list}" var="tag_list"> --%>
+		                            	<%-- <span class="sc_box_tag">${tag_list}</span> --%>
+		                            	<span class="sc_box_tag">${dto.tag}</span>
+		                            <%-- </c:forEach> --%>
 		                            </div>
 		                            <div id="doing1_content" class="sc_box_content">${dto.content}</div>
 		                            <div id="doing1_date" class="sc_box_date">${dto.start_time} - ${dto.end_time}</div>
@@ -374,7 +379,7 @@
                             <div id="done1_content" class="sc_box_content">Additional explanation.</div>
                             <div id="done1_date" class="sc_box_date">2021.01.01 - 2021.02.03 (30days)</div> 
                         </div> -->
-                    </div> 
+					</div> 
                  </div>
 
                 <!-- 스케줄 표 끝 -->
