@@ -33,12 +33,12 @@
             <span id="top_txt">
                 Schedule M.
                 
-	                            <!-- user 계정 테스트 -->
-	                            <%-- <c:forEach items="${user_info}" var="info">
-	                            	<div>user_info 테스트 !!!</div>
-	                            	<div>${info.id}</div>
-	                            	<div>${info.pw}</div>
-	                            </c:forEach> --%>
+	           <!-- user 계정 테스트 -->
+	           <c:forEach items="${user_info}" var="uesr_info">
+		           	<div>user_info 테스트 !!!</div>
+		           	<!-- hashmap foreach로 돌릴 때는 .value로 작성하기 -->
+		           	<div>${uesr_info.value}</div>
+	           </c:forEach>
                 
             </span>
             <span id="top_icon3">
