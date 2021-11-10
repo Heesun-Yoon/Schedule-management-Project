@@ -34,11 +34,12 @@
                 Schedule M.
                 
 	           <!-- user 계정 테스트 -->
-	           <c:forEach items="${user_info}" var="uesr_info">
-		           	<div>user_info 테스트 !!!</div>
+	           <c:forEach items="${user_info}" var="user_info" varStatus="status">
 		           	<!-- hashmap foreach로 돌릴 때는 .value로 작성하기 -->
-		           	<div>${uesr_info.value}</div>
+		           	<div id="hidden_data${status.index}" style="display: none">${user_info.value}</div>
 	           </c:forEach>
+
+	           
                 
             </span>
             <span id="top_icon3">
@@ -563,10 +564,14 @@
     //filter1 누를 경우 데이터 가져오기
     $("#filter1_btn").click (function() {
     	alert($("#filter1_txt").val());
+    	alert($("#hidden_data0").text());
+    	alert($("#hidden_data1").text());
     	
     	//ajax
     	var params = {
     		filter1_txt: $("#filter1_txt").val()
+    		,id: $("#hidden_data1").text()
+    		,pw: $("#hidden_data0").text()
     	}
     	
     	$.ajax({

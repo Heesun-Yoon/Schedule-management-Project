@@ -23,7 +23,11 @@ public class ScheduleFilterController {
 		
 		//Main 페이지에서 filter 부분 DB select 진행 작업 Controller
 		String filter1_txt = request.getParameter("filter1_txt");
+		String id = request.getParameter("id");
+		String pw = request.getParameter("pw");
 		System.out.println("스케줄 필터: "+filter1_txt);
+		System.out.println("스케줄 필터 id: "+id);
+		System.out.println("스케줄 필터 pw: "+pw);
 		
 		//select 하는데 필요한 정보
 		//user id, pw 

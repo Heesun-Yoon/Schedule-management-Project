@@ -105,6 +105,7 @@ public class MainController {
 		System.out.println("메인 필터위한 id " + user_info);
 		System.out.println("메인 필터위한 id " + user_info.get("id"));
 		System.out.println("메인 필터위한 id " + user_info.get("pw"));
+
 		
 		
 //		System.out.println("main smap id "+smap.get("id"));
