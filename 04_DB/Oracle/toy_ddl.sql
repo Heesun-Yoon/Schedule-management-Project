@@ -247,9 +247,10 @@ select * from TBL_SCHEDULE;
 --update TBL_SCHEDULE set START_TIME = '2021.08.01' where title = 'Toy Project';
 --update TBL_SCHEDULE set END_TIME = '2021.11.20' where title = 'Toy Project';
 
+--2021.11.19 pw 변경
+alter user toy identified by 1234;
 
-
-
+--commit;
 
 
 

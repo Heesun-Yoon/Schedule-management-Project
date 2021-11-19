@@ -45,6 +45,7 @@ public class ScheduleFilterController {
 		//select 날리기		
 		List<ScheduleDTO> filter_result = dao.filter_result(map);
 		
+		System.out.println("필터 select 완료:: "+filter_result.size());
 		System.out.println("필터 select 완료:: "+filter_result.get(0).getTag());
 		
 		//select 작업이라 결과값 return 필요
