@@ -115,7 +115,7 @@ select seq, member_seq, title, content, start_time, end_time, important, tag, co
         WHEN start_time < to_char(SYSDATE,'yyyy.mm.dd') AND end_time > to_char(SYSDATE,'yyyy.mm.dd') THEN 'DOING'
         WHEN end_time < to_char(SYSDATE,'yyyy.mm.dd') THEN 'DONE'
         END as state        
-from tbl_schedule where member_seq = (select seq from tbl_member where id='HeeSun' and pw='1234') and tag LIKE '%coding%';
+from tbl_schedule where member_seq = (select seq from tbl_member where id='HeeSun' and pw='1234') and tag LIKE '%java%';
 
 
 
@@ -239,13 +239,13 @@ update TBL_SCHEDULE set END_TIME = '20211129' where title = 'Toy Project';
 
 select * from TBL_SCHEDULE;
 
-commit;
+--commit;
 
 
 --2021.11.03
 -- start, end date 날짜에 "." 추가수정
-update TBL_SCHEDULE set START_TIME = '2021.08.01' where title = 'Toy Project';
-update TBL_SCHEDULE set END_TIME = '2021.11.20' where title = 'Toy Project';
+--update TBL_SCHEDULE set START_TIME = '2021.08.01' where title = 'Toy Project';
+--update TBL_SCHEDULE set END_TIME = '2021.11.20' where title = 'Toy Project';
 
 
 

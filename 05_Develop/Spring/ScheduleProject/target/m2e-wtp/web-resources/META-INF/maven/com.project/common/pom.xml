@@ -85,10 +85,24 @@
             <artifactId>spring-beans</artifactId>
             <version>${org.springframework-version}</version>
   		</dependency>
+  		
+  		
+  		
+  		<!-- jackson --> 
+ 		<dependency> 
+			<groupId>com.fasterxml.jackson.core</groupId> 
+			<artifactId>jackson-core</artifactId> 
+			<version>2.9.2</version> 
+		</dependency>
 
 
-		
-		
+		<!-- jackson-core  -->
+		<dependency> 
+			<groupId>com.fasterxml.jackson.core</groupId> 
+			<artifactId>jackson-databind</artifactId> 
+			<version>2.9.2</version> 
+		</dependency>
+				
 		
 		
 		
@@ -227,6 +241,34 @@
 			<scope>runtime</scope>
 		</dependency>
 
+
+
+		<!-- 
+			11.19 
+			java.lang.NoClassDefFoundError: org/apache/logging/log4j/LogManager
+		-->
+		<dependency>
+		  <groupId>org.apache.logging.log4j</groupId>
+		  <artifactId>log4j-cassandra</artifactId>
+		  <version>2.11.1</version>
+		</dependency>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		<!-- @Inject -->
 		<dependency>
 			<groupId>javax.inject</groupId>
@@ -280,10 +322,13 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.5.1</version>
+                <!-- <version>2.5.1</version> -->
+                <version>3.1</version>
                 <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
+                    <!-- <source>1.6</source>
+                    <target>1.6</target> -->
+                    <source>1.8</source>
+                    <target>1.8</target>
                     <compilerArgument>-Xlint:all</compilerArgument>
                     <showWarnings>true</showWarnings>
                     <showDeprecation>true</showDeprecation>
@@ -297,6 +342,22 @@
                     <mainClass>org.test.int1.Main</mainClass>
                 </configuration>
             </plugin>
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
         </plugins>
     </build>
 </project>

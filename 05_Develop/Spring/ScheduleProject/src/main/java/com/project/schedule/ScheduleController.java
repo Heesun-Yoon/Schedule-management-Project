@@ -35,7 +35,7 @@ public class ScheduleController {
 		
 		//로그인 세션 
 		HttpSession session = request.getSession();
-		session_seq = (int)(session.getAttribute("seq"));
+		session_seq = (Integer)(session.getAttribute("seq"));
 //		session_seq = (int)session_seq;
 		
 		System.out.println("스케줄 세션seq"+session.getAttribute("seq"));

@@ -578,11 +578,13 @@
     		type:"POST",
     		url:"schedule/schedulefilter.do",
     		data:params,
-    		success:function(res){
+    		success:function(data){
     			alert('성공');
+    			
     		},
     		error: function(err){
     			alert('실패');
+    			
     		}
     		
     	})

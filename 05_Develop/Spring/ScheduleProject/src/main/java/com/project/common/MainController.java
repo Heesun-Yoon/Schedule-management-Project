@@ -46,7 +46,7 @@ public class MainController {
 //		int seq = (int) session.getAttribute("seq");
 //		String seq = "1";
 //		String seq = session.getAttribute("seq")+"";
-		String seq = Integer.toString((int) session.getAttribute("seq"));
+		String seq = Integer.toString((Integer) session.getAttribute("seq"));
 		
 		
 		System.out.println("Ok > main 데이터 : "+userid);

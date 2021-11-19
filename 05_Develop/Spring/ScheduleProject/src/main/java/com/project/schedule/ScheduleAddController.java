@@ -41,7 +41,7 @@ public class ScheduleAddController {
 //		int seq = (int) session.getAttribute("seq");
 //		String seq = "1";
 //		String seq = session.getAttribute("seq")+"";
-		String member_seq = Integer.toString((int) session.getAttribute("seq"));
+		String member_seq = Integer.toString((Integer) session.getAttribute("seq"));
 		
 		System.out.println("추가"+userid);
 		System.out.println("추가"+userpw);

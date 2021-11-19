@@ -32,6 +32,19 @@ insert into TBL_SCHEDULE (seq, member_seq,title, content, start_time, end_time, 
 values (seq_schedule.nextVal,${member_seq},#{title},#{content},#{startdate},#{enddate},#{priority},#{tag},#{cost},#{state},#{regdate},#{delflag})
 </insert>
 
+<select id="filter_result" resultType="sdto" parameterType="map">
+		<![CDATA[
+		select 
+		seq, member_seq, title, content, start_time, end_time, important, tag, cost, regdate, delflag,
+        CASE 
+        WHEN start_time > to_char(SYSDATE,'yyyy.mm.dd') THEN 'TODO' 
+        WHEN start_time < to_char(SYSDATE,'yyyy.mm.dd') AND end_time > to_char(SYSDATE,'yyyy.mm.dd') THEN 'DOING'
+        WHEN end_time < to_char(SYSDATE,'yyyy.mm.dd') THEN 'DONE'
+        END as state 
+		from tbl_schedule where member_seq = (select seq from tbl_member where id=#{id} and pw=#{pw}) and tag LIKE '%' || #{filter_txt} || '%'
+		]]>
+</select>
+
 
 
 </mapper>  
