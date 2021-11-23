@@ -581,6 +581,12 @@
     		success:function(data){
     			alert('성공');
     			
+    			//list에 있는 값 빼기 (for, each로 돌려 빼기)
+    			$.each(data,function(index, value) {
+    	               alert(index);
+    	               alert(value.tag);
+    	         });
+    			
     		},
     		error: function(err){
     			alert('실패');
