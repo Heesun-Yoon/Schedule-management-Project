@@ -327,12 +327,12 @@
                          <!-- done 상태인 게시물만 출력 -->
                          <!-- 주석(원본) -->
                         <%-- <c:forEach items="${s_result}" var="state_dto"> --%>
-                        <c:forEach items="${s_result}" var="dto">
+                        <c:forEach items="${s_result}" var="dto" varStatus="theCount">
                         <!-- 주석(원본) -->
                         <%-- <c:if test="${state_dto.state eq 'DONE'}"> --%>
                         <c:if test="${dto.state eq 'DONE'}">
 	                        <!-- <div id="doing_1" class="sc_box"> -->
-	                        <div class="sc_box">
+	                        <div class="sc_box" id="sc_box_${theCount.count}">
 	                            <span id="doing_priority1" class="sc_box_priority">
 	                            <%-- <c:forEach items="${s_result}" var="dto"> --%>
 	                            <c:choose>
@@ -362,7 +362,7 @@
 		                            <div id="tag_div">
 		                            <%-- <c:forEach items="${tag_list}" var="tag_list"> --%>
 		                            	<%-- <span class="sc_box_tag">${tag_list}</span> --%>
-		                            	<span class="sc_box_tag">${dto.tag}</span>
+		                            	<span class="sc_box_tag" id="sc_box_tag_${theCount.count}">${dto.tag}</span>
 		                            <%-- </c:forEach> --%>
 		                            </div>
 		                            <div id="doing1_content" class="sc_box_content">${dto.content}</div>
@@ -585,11 +585,41 @@
     			$.each(data,function(index, value) {
     	               alert(index);
     	               alert(value.tag);
+    	               var search_text = value.tag;
+    	               alert('search_text'+search_text);
+    	               
+    	             //해당하는 스케줄 제외하고 display none ?
+    	             //모든 .sc_box_content 의 값을 연결하여 가져옴
+    	             //Java, Oracle, JavaScript StudyJavasciprt Study, Programmers QuestionToy Project in Progress
+    	             var a = 0;
+    	             var temp_id;
+    	             var temp_id2;
+    	             //무한루프 주의!!
+    	             while(a < 100) {
+	    	             a++;
+	    	             if(a == 4) break;
+	    	             temp_id = '#sc_box_'.concat(a);
+	    	             temp_id2 = '#sc_box_tag_'.concat(a);
+	    	             alert('temp_id:::'+temp_id);
+	    	             
+	    	          //해당 text 찾기
+	    	          var temp_text = $(temp_id2).text();
+	    	          	alert('temp_text:::'+temp_text);
+	    	          	if(temp_text === search_text) {
+	    	          		alert('찾음');
+	    	          		/* break; */
+	    	          	} else {
+	    	          	//못찾았을 때 (css 변경 해야함. display : none)
+	    	          	$(temp_id).css({"display":"none"});
+	    	          }
+    	             }
+    	             
+    	             
+    	             
     	         });
     			
-    			//해당하는 스케줄 제외하고 display none (?)
     			
-    			
+
     		},
     		error: function(err){
     			alert('실패');
