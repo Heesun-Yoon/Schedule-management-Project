@@ -589,6 +589,7 @@
     			
     			//해당하는 스케줄 제외하고 display none (?)
     			
+    			
     		},
     		error: function(err){
     			alert('실패');
