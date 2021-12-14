@@ -253,7 +253,10 @@ alter user toy identified by 1234;
 --commit;
 
 
-
+--12.14
+--date filter 기능 위한 select
+select seq, member_seq, title, content, start_time, end_time, important, tag, cost, regdate, delflag 
+from tbl_schedule where member_seq = (select seq from tbl_member where id='HeeSun' and pw='1234') and start_time = '2021.10.22';
 
 
 

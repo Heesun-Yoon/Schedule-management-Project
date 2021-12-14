@@ -635,18 +635,22 @@
     //Date 조건 검색
     $("#filter3_btn").click(function() {
     	
+    	alert('sel_txt : '+$("#filter3_sel option:selected").val());
+    	
     	var params = {
-    		sel_text : $("#filter3_sel option:selected").val()
+    		sel_txt : $("#filter3_sel option:selected").val()
     		,filter3_txt : $("#filter3_txt").val()
+    		,id: $("#hidden_data1").text()
+    		,pw: $("#hidden_data0").text()
     	}
     	
     	
     	$.ajax({
     		type: "POST",
-    		url: "schedule/schedulefilter.do",
+    		url: "schedule/scheduledatefilter.do",
     		data: params,
     		success: function(data){
-    			
+    			alert('성공');
     		},
     		error: function(err){
     			alert('실패');

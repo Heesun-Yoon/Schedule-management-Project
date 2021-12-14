@@ -46,5 +46,13 @@ values (seq_schedule.nextVal,${member_seq},#{title},#{content},#{startdate},#{en
 </select>
 
 
+<select id="date_filter_result" resultType="sdto" parameterType="map">
+
+		select seq, member_seq, title, content, start_time, end_time, important, tag, cost, regdate, delflag 
+		from tbl_schedule where member_seq = (select seq from tbl_member where id=#{id} and pw=#{pw}) and #{sel_txt} = #{filter3_txt}
+
+</select>
+
+
 
 </mapper>  
