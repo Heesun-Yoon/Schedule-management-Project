@@ -153,11 +153,11 @@
                 </div>
 
                 <div id="filter3_click" class="filter_click">
-                    <select>
+                    <select id="filter3_sel">
                         <option value="start">Start</option>
                         <option value="end">End</option>
                     </select>
-                    <textarea placeholder="Start or End date" cols="30" rows="1"></textarea>
+                    <textarea placeholder="Start or End date" cols="30" rows="1" id="filter3_txt"></textarea>
                     <div id="filter3_btn">검색</div>
                 </div>
 
@@ -586,7 +586,7 @@
     	               alert(index);
     	               alert(value.tag);
     	               var search_text = value.tag;
-    	               alert('search_text'+search_text);
+    	               /* alert('search_text'+search_text); */
     	               
     	             //해당하는 스케줄 제외하고 display none ?
     	             //모든 .sc_box_content 의 값을 연결하여 가져옴
@@ -600,13 +600,13 @@
 	    	             if(a == 4) break;
 	    	             temp_id = '#sc_box_'.concat(a);
 	    	             temp_id2 = '#sc_box_tag_'.concat(a);
-	    	             alert('temp_id:::'+temp_id);
+	    	             /* alert('temp_id:::'+temp_id); */
 	    	             
 	    	          //해당 text 찾기
 	    	          var temp_text = $(temp_id2).text();
 	    	          	alert('temp_text:::'+temp_text);
 	    	          	if(temp_text === search_text) {
-	    	          		alert('찾음');
+	    	          		/* alert('찾음'); */
 	    	          		/* break; */
 	    	          	} else {
 	    	          	//못찾았을 때 (css 변경 해야함. display : none)
@@ -614,11 +614,7 @@
 	    	          }
     	             }
     	             
-    	             
-    	             
     	         });
-    			
-    			
 
     		},
     		error: function(err){
@@ -633,6 +629,38 @@
     	$('#filter1_click').hide();
     	
     });
+    
+    
+    
+    //Date 조건 검색
+    $("#filter3_btn").click(function() {
+    	
+    	var params = {
+    		sel_text : $("#filter3_sel option:selected").val()
+    		,filter3_txt : $("#filter3_txt").val()
+    	}
+    	
+    	
+    	$.ajax({
+    		type: "POST",
+    		url: "schedule/schedulefilter.do",
+    		data: params,
+    		success: function(data){
+    			
+    		},
+    		error: function(err){
+    			alert('실패');
+    		}
+    	})
+    	
+    	//ajax 처리 끝났을 때
+    	$("#filter3_txt").val('');
+    	
+    	
+    });
+    
+    
+    
     
     
 
