@@ -14,9 +14,14 @@ public class ScheduleDateFilterDAO implements IScheduleDateFilterDAO{
 	private SqlSessionTemplate template;
 
 	@Override
-	public List<ScheduleDTO> dateFilter_result(HashMap<String, String> map) {
-		return template.selectList("schedule.date_filter_result",map);
+	public List<ScheduleDTO> startdateFilter_result(HashMap<String, String> map) {
+		return template.selectList("schedule.startdate_filter_result",map);
 	}
+	
+	public List<ScheduleDTO> enddateFilter_result(HashMap<String, String> map) {
+		return template.selectList("schedule.enddate_filter_result",map);
+	}
+	
 	
 	
 

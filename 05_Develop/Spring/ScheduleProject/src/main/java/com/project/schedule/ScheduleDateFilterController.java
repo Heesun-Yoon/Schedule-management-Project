@@ -35,8 +35,11 @@ public class ScheduleDateFilterController {
 		if(sel_txt.equals("start")) sel_txt = "start_time"; 
 		if(sel_txt.equals("end")) sel_txt = "end_time"; 
 		
+		System.out.println("ddatefilter: "+ id);
+		System.out.println("ddatefilter: "+ pw);
 		System.out.println("datefilter: "+sel_txt);
 		System.out.println("datefilter: "+filter3_txt);
+		
 		
 		HashMap<String,String> map = new HashMap<String,String>();
 		
@@ -45,12 +48,23 @@ public class ScheduleDateFilterController {
 		map.put("sel_txt", sel_txt);
 		map.put("filter3_txt", filter3_txt);
 		
-		List<ScheduleDTO> dateFilter_result = dao.dateFilter_result(map);
+		if(sel_txt.equals("start_time")) {
+			
+			List<ScheduleDTO> dateFilter_result = dao.startdateFilter_result(map);
+			System.err.println("if");
+			System.out.println("datesize :: "+dateFilter_result.size());
+			return dateFilter_result;
+			
+		} else {
+			
+			List<ScheduleDTO> dateFilter_result = dao.enddateFilter_result(map);
+			System.err.println("else");
+			System.out.println("datesize :: "+dateFilter_result.size());
+			return dateFilter_result;
+			
+		}
 		
-		
-		System.out.println("datesize :: "+dateFilter_result.size());
 
-		return dateFilter_result;
 	}
 	
 }

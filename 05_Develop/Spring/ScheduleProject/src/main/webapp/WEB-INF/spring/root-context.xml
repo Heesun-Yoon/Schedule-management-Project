@@ -16,6 +16,7 @@
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	
 	<!-- MyBatis 설정 -->
+	<!-- 기존 소스 -->
 	<bean id="dataSource"
 		class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName"
@@ -27,6 +28,8 @@
 	</bean>
 	
 	
+
+
 	<!-- log4j -->
 	<!-- DB에도 log를 찍기위한 config -->
 <!-- 	<bean id="log4j" class="net.sf.log4jdbc.Log4jdbcProxyDataSource">
