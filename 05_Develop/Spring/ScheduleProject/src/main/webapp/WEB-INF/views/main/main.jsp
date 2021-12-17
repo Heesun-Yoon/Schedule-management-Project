@@ -654,8 +654,20 @@
     			//list에 있는 값 빼기 (for, each로 돌려 빼기)
     			$.each(data,function(index, value) {
     				alert('date alert '+index);
- 	                alert('date alert '+value.tag);
- 	                var search_text = value.tag;
+    				
+    				var sel_data = $("#filter3_sel option:selected").val();
+    				var search_text;
+	    	          
+	    	          if(sel_data == 'start') {
+	    	        	 alert('date alert '+value.start_time);
+	    	        	 search_text = value.start_time;
+	    	          } else if(sel_data == 'end') {
+	    	        	 alert('date alert '+value.end_time);
+	    	        	 search_text = value.end_time;
+	    	          }
+    				
+    				
+ 	               	alert('????search_text '+search_text);
  	                
 	   	             var a = 0;
 		             var temp_id;
@@ -672,14 +684,35 @@
 	    	             alert('temp_id2:::'+temp_id2);
 	    	             
 	    	          //해당 text 찾기
+	    	          /*
+	    	          	날짜 가져온 경우 
+	    	          	'2021.08.01 - 2021.11.20' 
+	    	          	시작 - 끝 날짜 모두 가져오기 때문에 조건에 맞는 값을 찾지 못함. 
+	    	          	select box 값에 따라 한번 더 가공 필요
+	    	          */
 	    	          var temp_text = $(temp_id2).text();
+	    	          var temp_date_text;
+	    	          var sel_data = $("#filter3_sel option:selected").val();
+	    	          
+	    	          if(sel_data == 'start') {
+		    	          //a. select-box 값이 start 인 경우 
+		    	          // - 처음부터 ~ '-' 나올 때 까지 
+		    	          temp_date_text = temp_text.substr(0, temp_text.indexOf('-'));
+
+	    	          } else if(sel_data == 'end') {
+	    	        	  //b. select-box 값이 end 인 경우 
+		    	          // - '-' +1 부터 ~ 끝까지 
+		    	          temp_date_text = temp_text.substr(temp_text.indexOf('-')+1);
+	    	          }
+	    	          //start, end 공통 작업 
+	    	          temp_date_text = temp_date_text.replace(' ','');
+	    	          alert('temp_date-text :: '+ temp_date_text);
+	    	          temp_text = temp_date_text;
+	    	          
+	    	          	
 	    	          	alert('temp_text:::'+temp_text);
-	    	          	/*
-		    	          	날짜 가져온 경우 
-		    	          	'2021.08.01 - 2021.11.20' 
-		    	          	시작 - 끝 날짜 모두 가져오기 때문에 조건에 맞는 값을 찾지 못함. 
-		    	          	select box 값에 따라 한번 더 가공 필요
-	    	          	*/
+	    	          	alert('search_text:::'+search_text);
+	    	          	
 	    	          	if(temp_text === search_text) {
 	    	          		/* alert('찾음'); */
 	    	          		/* break; */
