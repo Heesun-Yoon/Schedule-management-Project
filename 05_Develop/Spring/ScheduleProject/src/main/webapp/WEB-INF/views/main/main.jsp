@@ -366,7 +366,7 @@
 		                            <%-- </c:forEach> --%>
 		                            </div>
 		                            <div id="doing1_content" class="sc_box_content">${dto.content}</div>
-		                            <div id="doing1_date" class="sc_box_date">${dto.start_time} - ${dto.end_time}</div>
+		                            <div id="doing${theCount.count}_date" class="sc_box_date">${dto.start_time} - ${dto.end_time}</div>
 		                         <%-- </c:forEach> --%>
 	                        </div>
                         </c:if>
@@ -651,6 +651,45 @@
     		data: params,
     		success: function(data){
     			alert('성공');
+    			//list에 있는 값 빼기 (for, each로 돌려 빼기)
+    			$.each(data,function(index, value) {
+    				alert('date alert '+index);
+ 	                alert('date alert '+value.tag);
+ 	                var search_text = value.tag;
+ 	                
+	   	             var a = 0;
+		             var temp_id;
+		             var temp_id2;
+		             /* var temp_id3; */
+		             
+		             //무한루프 주의!!
+		             while(a < 100) {
+	    	             a++;
+	    	             if(a == 4) break;
+	    	             temp_id = '#sc_box_'.concat(a);
+	    	             temp_id2 = '#doing'.concat(a).concat('_date');
+	    	             /* temp_td3 = temp_id2.concat('_date'); */
+	    	             alert('temp_id2:::'+temp_id2);
+	    	             
+	    	          //해당 text 찾기
+	    	          var temp_text = $(temp_id2).text();
+	    	          	alert('temp_text:::'+temp_text);
+	    	          	/*
+		    	          	날짜 가져온 경우 
+		    	          	'2021.08.01 - 2021.11.20' 
+		    	          	시작 - 끝 날짜 모두 가져오기 때문에 조건에 맞는 값을 찾지 못함. 
+		    	          	select box 값에 따라 한번 더 가공 필요
+	    	          	*/
+	    	          	if(temp_text === search_text) {
+	    	          		/* alert('찾음'); */
+	    	          		/* break; */
+	    	          	} else {
+	    	          	//못찾았을 때 (css 변경 해야함. display : none)
+	    	          	$(temp_id).css({"display":"none"});
+	    	          }
+		             }
+    			});
+    			
     		},
     		error: function(err){
     			alert('실패');
