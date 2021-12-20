@@ -749,6 +749,23 @@
             border: 0;
         }
         
+        
+        /* 21.12.20_삭제 버튼 추가  */
+        #del_btn {
+        	border: 1px solid #808080;
+        	border-radius: 10px;
+        	width: 5%;
+        	height: 15%;
+        	margin-left: 90%;
+        	text-align: center;
+        	cursor: pointer;
+        }
+        
+        
+        
+        
+        
+        
 
 
         

@@ -214,6 +214,13 @@
 		                            <div id="doing1_content" class="sc_box_content">${dto.content}</div>
 		                            <div id="doing1_date" class="sc_box_date">${dto.start_time} - ${dto.end_time}</div>
 		                         <%-- </c:forEach> --%>
+		                         
+		                         <!-- 21.12.20 -->
+		                         <!-- 삭제 버튼 추가 -->
+		                         <div id="del_btn">X</div>
+		                         
+		                         
+		                         
 	                        </div>
                         </c:if>
                         </c:forEach>
