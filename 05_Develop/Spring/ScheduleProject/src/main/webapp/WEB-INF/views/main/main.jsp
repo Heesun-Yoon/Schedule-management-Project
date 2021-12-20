@@ -176,45 +176,44 @@
                         <div id="todo_add" class="sc_add">+ Add a Schedule</div>
                         
                          <!-- todo 상태인 게시물만 출력 -->
-                        <c:forEach items="${s_result}" var="state_dto">
-                        <c:if test="${state_dto.state eq 'TODO'}">
+                        <c:forEach items="${s_result}" var="dto">
+                        <c:if test="${dto.state eq 'TODO'}">
 	                        <div id="doing_1" class="sc_box">
 	                            <span id="doing_priority1" class="sc_box_priority">
-	                            <c:forEach items="${s_result}" var="dto">
-	                            <c:choose>
-	                            	<c:when test="${dto.important eq 1}">
-			                            <!-- 중요도에 따라 이미지 달라짐  -->
-			                            <!-- 1 (down.png) , 2/3 (minus.png) , 4/5 (up.png) -->
-		                                <img src="resources\images\down.png" id="img18" class="priority_img">
-		                       		</c:when>
-		                       		
-		                       		<c:when test="${dto.important eq 2 || dto.important eq 3}">
-			                            <!-- 중요도에 따라 이미지 달라짐  -->
-			                            <!-- 1 (down.png) , 2/3 (minus.png) , 4/5 (up.png) -->
-		                                <img src="resources\images\minus.png" id="img18" class="priority_img">
-		                       		</c:when>
-		                       		
-		                       		<c:when test="${dto.important eq 4 || dto.important eq 5}">
-			                            <!-- 중요도에 따라 이미지 달라짐  -->
-			                            <!-- 1 (down.png) , 2/3 (minus.png) , 4/5 (up.png) -->
-		                                <img src="resources\images\up.png" id="img18" class="priority_img">
-		                       		</c:when>
-		                       		
-		                        </c:choose>
-		                        </c:forEach>
+	                            <%-- <c:forEach items="${s_result}" var="dto"> --%>
+		                            <c:choose>
+		                            	<c:when test="${dto.important eq 1}">
+				                            <!-- 중요도에 따라 이미지 달라짐  -->
+				                            <!-- 1 (down.png) , 2/3 (minus.png) , 4/5 (up.png) -->
+			                                <img src="resources\images\down.png" id="img18" class="priority_img">
+			                       		</c:when>
+			                       		
+			                       		<c:when test="${dto.important eq 2 || dto.important eq 3}">
+				                            <!-- 중요도에 따라 이미지 달라짐  -->
+				                            <!-- 1 (down.png) , 2/3 (minus.png) , 4/5 (up.png) -->
+			                                <img src="resources\images\minus.png" id="img18" class="priority_img">
+			                       		</c:when>
+			                       		
+			                       		<c:when test="${dto.important eq 4 || dto.important eq 5}">
+				                            <!-- 중요도에 따라 이미지 달라짐  -->
+				                            <!-- 1 (down.png) , 2/3 (minus.png) , 4/5 (up.png) -->
+			                                <img src="resources\images\up.png" id="img18" class="priority_img">
+			                       		</c:when>
+			                       		
+		                        	</c:choose>
+		                        <%-- </c:forEach> --%>
 	                            </span>
-	                            <c:forEach items="${s_result}" var="dto">
-		                            <span id="doing_title1" class="sc_box_title">${dto.title} 이건 나옴?</span>
+	                            <%-- <c:forEach items="${s_result}" var="dto"> --%>
+		                            <span id="doing_title1" class="sc_box_title">${dto.title}</span>
 		                            <div id="tag_div">
-		                           	엥 왜안나옴?
 		                            <%-- <c:forEach items="${tag_list}" var="tag_list">
 		                            	<span class="sc_box_tag">${tag_list}</span>
 		                            </c:forEach> --%>
-		                            <span class="sc_box_tag">${dto.tag}111</span>
+		                            <span class="sc_box_tag">${dto.tag}</span>
 		                            </div>
 		                            <div id="doing1_content" class="sc_box_content">${dto.content}</div>
 		                            <div id="doing1_date" class="sc_box_date">${dto.start_time} - ${dto.end_time}</div>
-		                         </c:forEach>
+		                         <%-- </c:forEach> --%>
 	                        </div>
                         </c:if>
                         </c:forEach>

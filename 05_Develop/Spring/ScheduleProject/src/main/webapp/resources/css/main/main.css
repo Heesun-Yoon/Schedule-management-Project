@@ -475,7 +475,8 @@
             height: 720px;
             margin-top: 20px;
             margin-left: 50px;
-            position: absolute;
+            /* position: absolute; */
+            position: fixed;
             top: 10;
         }
 
@@ -488,7 +489,7 @@
             /* margin-top: -193px; */
             /* margin-top: -2px; */
             /* margin-top: -0.5%; */
-            margin-top: -39.5%;
+            margin-top: -10.1%;
         }
 
         .sc_txt{
