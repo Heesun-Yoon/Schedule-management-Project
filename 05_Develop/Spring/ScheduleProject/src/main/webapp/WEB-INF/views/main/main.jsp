@@ -744,8 +744,22 @@
     
     
     
-    
-
+    /* 스케줄 삭제 버튼 */
+	$("#del_btn").click(function() {
+		
+		/* [object HTMLDivElement] */
+		alert(event.target);
+		alert(event.target.id);
+		/* del_btn */
+		alert($(this).closest('div').attr('id'));
+		
+		var params = {
+			
+    		id: $("#hidden_data1").text()
+    		,pw: $("#hidden_data0").text()
+		}
+		
+	});
     
     
     
