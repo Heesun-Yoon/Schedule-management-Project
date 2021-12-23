@@ -753,7 +753,18 @@
 		/* del_btn */
 		/* alert($(this).closest('div').attr('id')); */
 		
-		aler('형제 선택자 ' + $("#del_btn").prevAll().val());
+		
+		/* 21.12.23 이 부분 다시 봐야함! */
+		
+		alert('형제 선택자 ' + $(this).parent().attr('id'));
+		alert('형제 선택자 ' + $(this).prevAll().attr('id'));
+		
+		//부모 태그의 id를 찾아 선택자로 title 값을 가져옴 
+		var parent_id = $(this).parent().attr('id');
+		var temp;
+		temp = $('parent_id > #doing_title1'.val());
+		alert(temp);
+		
 		
 		var params = {
 			
