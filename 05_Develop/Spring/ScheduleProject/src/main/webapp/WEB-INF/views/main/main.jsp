@@ -748,10 +748,12 @@
 	$("#del_btn").click(function() {
 		
 		/* [object HTMLDivElement] */
-		alert(event.target);
-		alert(event.target.id);
+		/* alert(event.target);
+		alert(event.target.id); */
 		/* del_btn */
-		alert($(this).closest('div').attr('id'));
+		/* alert($(this).closest('div').attr('id')); */
+		
+		aler('형제 선택자 ' + $("#del_btn").prevAll().val());
 		
 		var params = {
 			
